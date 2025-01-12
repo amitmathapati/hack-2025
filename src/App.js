@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import ThreeScene from "./ThreeScene";
-import { BrowserRouter as Router, Route, Routes, Link, Switch } from 'react-router-dom';
 
 // function App() {
 //   // return (
