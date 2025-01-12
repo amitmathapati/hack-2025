@@ -1,4 +1,4 @@
-# hack-2025 Project
+# hack-2025 Project Details
 
 =======
 
