@@ -5,7 +5,7 @@ import * as THREE from "three";
 
 const Booth = ({ modelUrl, position }) => {
   const { scene } = useGLTF(modelUrl);
-  return <primitive object={scene} position={position} scale={[0.1, 0.1, 0.1]} />;
+  return <primitive object={scene} position={position} scale={[0.1, 0.1, 0.1]} castShadow />;
 };
 
 const Avatar = ({ position }) => {
@@ -18,7 +18,7 @@ const Avatar = ({ position }) => {
     }
   });
 
-  return <primitive object={scene} ref={avatarRef} />;
+  return <primitive object={scene} ref={avatarRef} scale={[100.8, 100.8, 100.8]} />;
 };
 
 const ThreeScene = () => {
@@ -61,10 +61,10 @@ const ThreeScene = () => {
   }, []);
 
   return (
-    <Canvas camera={{ position: [0, 5, 10], fov: 75, near: 0.1, far: 1000 }}>
+    <Canvas shadows camera={{ position: [0, 5, 10], fov: 75, near: 0.1, far: 1000 }}>
       {/* Lighting */}
-      <ambientLight intensity={0.7} />
-      <directionalLight position={[10, 10, 10]} intensity={0.5} />
+      <ambientLight intensity={0.5} />
+      <directionalLight castShadow position={[10, 10, 10]} intensity={0.8} />
 
       {/* Floor */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
@@ -76,7 +76,7 @@ const ThreeScene = () => {
       <Avatar position={avatarPosition} />
 
       {/* Booths */}
-      <Booth modelUrl="/models/scene.gltf" position={[5, 0.1, -5]} />
+      <Booth modelUrl="/models/scene.gltf" position={[5, 0.1, -5]} scale={[0.1, 0.1, 0.1]}/>
       {/* <Booth modelUrl="/models/scene.gltf" position={[-5, 0, -5]} />
       <Booth modelUrl="/models/scene.gltf" position={[0, 0, -10]} /> */}
 
