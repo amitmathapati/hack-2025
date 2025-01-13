@@ -15,8 +15,8 @@ const Booth = ({ modelUrl, position }) => {
 const Box = ({ position, onClick }) => {
   return (
     <mesh position={position} onClick={onClick}>
-      <boxGeometry args={[10, 10, 5]} />
-      <meshStandardMaterial color="blue" />
+      <boxGeometry args={[20, 20, 5]} />
+      <meshStandardMaterial color="yellow" />
     </mesh>
   );
 };
@@ -158,8 +158,16 @@ const ThreeScene = () => {
           </mesh>
     
           {/* Booths */}
+          {/* Clickable Box */}
+          <Box position={[-100, 100, -100]} onClick={handleBoxClick} />
           <Booth modelUrl="/models/scene.gltf" position={[5, 0.1, -5]} scale={[0.1, 0.1, 0.1]} />
+
+          {/* Clickable Box */}
+          <Box position={[300, 200, -100]} onClick={handleBoxClick} />
           <Booth modelUrl="/models/15ftbooth/scene.gltf" position={[600, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
+
+          {/* Clickable Box */}
+          <Box position={[1100, 200, -100]} onClick={handleBoxClick} />
           <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[1400, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
           {/* <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[5, 0.1, 500]} scale={[0.1, 0.1, 0.1]} rotation={[0, Math.PI, 0]} /> */}
 
