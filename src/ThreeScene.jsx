@@ -21,15 +21,41 @@ const Box = ({ position, onClick }) => {
   );
 };
 
-const Popup = ({ visible, onClose, onRowClick }) => {
+// const Popup = ({ visible, onClose, onRowClick }) => {
+//   if (!visible) return null;
+
+//   return (
+//     <div style={popupStyle}>
+//       {/* <div style={rowStyle}>Job Posting 1</div>
+//       <div style={rowStyle}>Job Posting 2</div> */}
+//       <div style={rowStyle} onClick={() => onRowClick('Job Posting 1')}>Sr. Staff Software Engineer - Twitter Ads</div>
+//       <div style={rowStyle} onClick={() => onRowClick('Job Posting 2')}>Staff Software Engineer - Twitter Infra</div>
+//       <button onClick={onClose}>Close</button>
+//     </div>
+//   );
+// };
+
+// const DetailPopup = ({ visible, onClose, text }) => {
+//   if (!visible) return null;
+
+//   return (
+//     <div style={detailPopupStyle}>
+//       <div>{text}</div>
+//       <button onClick={onClose}>Close</button>
+//     </div>
+//   );
+// };
+
+const Popup = ({ visible, onClose, onRowClick, rows }) => {
   if (!visible) return null;
 
   return (
     <div style={popupStyle}>
-      {/* <div style={rowStyle}>Job Posting 1</div>
-      <div style={rowStyle}>Job Posting 2</div> */}
-      <div style={rowStyle} onClick={() => onRowClick('Job Posting 1')}>Job Posting 1</div>
-      <div style={rowStyle} onClick={() => onRowClick('Job Posting 2')}>Job Posting 2</div>
+      {rows.map((row, index) => (
+        <div key={index} style={rowStyle} onClick={() => onRowClick(row)}>
+          {row}
+        </div>
+      ))}
       <button onClick={onClose}>Close</button>
     </div>
   );
@@ -60,6 +86,7 @@ const popupStyle = {
 
 const rowStyle = {
   marginBottom: '10px',
+  cursor: 'pointer',
 };
 
 const detailPopupStyle = {
@@ -159,8 +186,16 @@ const ThreeScene = () => {
   const [popupVisible, setPopupVisible] = useState(false);
   const [detailPopupVisible, setDetailPopupVisible] = useState(false);
   const [detailText, setDetailText] = useState('');
+  const [currentRows, setCurrentRows] = useState([]);
 
-  const handleBoxClick = () => {
+  const boxData = new Map([
+    ['Meta', ['Privacy Engineer Implementation Review - Meta', 'Security Detection Engineer - Meta']],
+    ['Databricks', ['Staff Software Engineer - Backend - Databricks', 'GenAI Senior Staff Machine Learning Engineer - Platform - Databricks']],
+    ['Google', ['Senior Staff Software Engineering Manager - Youtube', 'Staff Software Engineer - Generative AI - Google Cloud AI']],
+  ]);
+
+  const handleBoxClick = (boxKey) => {
+    setCurrentRows(boxData.get(boxKey) || []);
     setPopupVisible(true);
   };
 
@@ -168,7 +203,10 @@ const ThreeScene = () => {
     setPopupVisible(false);
   };
 
-  const handleRowClick = (text) => {
+  const handleRowClick = async (row) => {
+    console.log("Row name is: ", row);
+    const response = await fetch(`/details/${row}.txt`);
+    const text = await response.text();
     setDetailText(text);
     setDetailPopupVisible(true);
   };
@@ -195,21 +233,17 @@ const ThreeScene = () => {
     
           {/* Booths */}
           {/* Clickable Box */}
-          <Box position={[-100, 100, -100]} onClick={handleBoxClick} />
+          <Box position={[-100, 100, -100]} onClick={() => handleBoxClick('Meta')} />
           <Booth modelUrl="/models/scene.gltf" position={[5, 0.1, -5]} scale={[0.1, 0.1, 0.1]} />
 
           {/* Clickable Box */}
-          <Box position={[300, 200, -100]} onClick={handleBoxClick} />
+          <Box position={[300, 200, -100]} onClick={() => handleBoxClick('Databricks')} />
           <Booth modelUrl="/models/15ftbooth/scene.gltf" position={[600, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
 
           {/* Clickable Box */}
-          <Box position={[1100, 200, -100]} onClick={handleBoxClick} />
+          <Box position={[1100, 200, -100]} onClick={() => handleBoxClick('Google')} />
           <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[1400, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
           {/* <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[5, 0.1, 500]} scale={[0.1, 0.1, 0.1]} rotation={[0, Math.PI, 0]} /> */}
-
-    
-          {/* Clickable Box */}
-          <Box position={[-100, 100, -100]} onClick={handleBoxClick} />
 
           {/* Movable Avatar */}
           {/* <MovableAvatar position={[10, 0.1, 100]} /> */}
@@ -220,7 +254,7 @@ const ThreeScene = () => {
         </Canvas>
 
       {/* Popup */}
-      <Popup visible={popupVisible} onClose={handleClosePopup} onRowClick={handleRowClick} />
+      <Popup visible={popupVisible} onClose={handleClosePopup} onRowClick={handleRowClick} rows={currentRows} />
       {/* Detail Popup */}
       <DetailPopup visible={detailPopupVisible} onClose={handleCloseDetailPopup} text={detailText} />
       </>
