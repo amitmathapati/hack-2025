@@ -12,6 +12,42 @@ const Booth = ({ modelUrl, position }) => {
   return <primitive object={scene} position={position} scale={[0.1, 0.1, 0.1]} castShadow />;
 };
 
+const Box = ({ position, onClick }) => {
+  return (
+    <mesh position={position} onClick={onClick}>
+      <boxGeometry args={[10, 10, 5]} />
+      <meshStandardMaterial color="blue" />
+    </mesh>
+  );
+};
+
+const Popup = ({ visible, onClose }) => {
+  if (!visible) return null;
+
+  return (
+    <div style={popupStyle}>
+      <div style={rowStyle}>Row 1</div>
+      <div style={rowStyle}>Row 2</div>
+      <button onClick={onClose}>Close</button>
+    </div>
+  );
+};
+
+const popupStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  backgroundColor: 'white',
+  padding: '20px',
+  boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+  zIndex: 1000,
+};
+
+const rowStyle = {
+  marginBottom: '10px',
+};
+
 // const Avatar = ({ position }) => {
 //   const avatarRef = useRef();
 //   const { scene } = useGLTF("https://models.readyplayer.me/67830ccfc3b7b7b28d00b478.glb"); // Replace with your Ready Player Me avatar URL
@@ -95,36 +131,53 @@ const Booth = ({ modelUrl, position }) => {
 
 const ThreeScene = () => {
 
+  const [popupVisible, setPopupVisible] = useState(false);
+
+  const handleBoxClick = () => {
+    setPopupVisible(true);
+  };
+
+  const handleClosePopup = () => {
+    setPopupVisible(false);
+  };
+
 
     return (
-      <Canvas
-        shadows
-        // camera={{ position: [300, 5, 15], fov: 50, near: 0.1, far: 1000 }}
-        camera={{ position: [-100, 150, 650], fov: 50, near: 0.1, far: 1000 }}
-      >
-        <ambientLight intensity={0.5} />
-        <directionalLight castShadow position={[10, 10, 10]} intensity={0.8} />
-  
-        {/* Ground */}
-        <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
-          <planeGeometry args={[50, 50]} />
-          <meshStandardMaterial color="#808080" />
-        </mesh>
-  
-        {/* Booths */}
-        <Booth modelUrl="/models/scene.gltf" position={[5, 0.1, -5]} scale={[0.1, 0.1, 0.1]} />
-        <Booth modelUrl="/models/15ftbooth/scene.gltf" position={[600, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
-        <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[1600, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
-        {/* <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[5, 0.1, 500]} scale={[0.1, 0.1, 0.1]} rotation={[0, Math.PI, 0]} /> */}
+      <>
+        <Canvas
+          shadows
+          camera={{ position: [-100, 150, 650], fov: 50, near: 0.1, far: 1000 }}
+        >
+          <ambientLight intensity={0.5} />
+          <directionalLight castShadow position={[10, 10, 10]} intensity={0.8} />
+    
+          {/* Ground */}
+          <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[50, 50]} />
+            <meshStandardMaterial color="#808080" />
+          </mesh>
+    
+          {/* Booths */}
+          <Booth modelUrl="/models/scene.gltf" position={[5, 0.1, -5]} scale={[0.1, 0.1, 0.1]} />
+          <Booth modelUrl="/models/15ftbooth/scene.gltf" position={[600, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
+          <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[1400, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
+          {/* <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[5, 0.1, 500]} scale={[0.1, 0.1, 0.1]} rotation={[0, Math.PI, 0]} /> */}
 
-  
-        {/* Movable Avatar */}
-        {/* <MovableAvatar position={[10, 0.1, 100]} /> */}
-        <CameraController />
-  
-        {/* <OrbitControls enableDamping dampingFactor={0.2} /> */}
-        <PointerLockControls />
-      </Canvas>
+    
+          {/* Clickable Box */}
+          <Box position={[-100, 100, -100]} onClick={handleBoxClick} />
+
+          {/* Movable Avatar */}
+          {/* <MovableAvatar position={[10, 0.1, 100]} /> */}
+          <CameraController />
+    
+          {/* <OrbitControls enableDamping dampingFactor={0.2} /> */}
+          {/* <PointerLockControls /> */}
+        </Canvas>
+
+      {/* Popup */}
+      <Popup visible={popupVisible} onClose={handleClosePopup} />
+      </>
     );
   };
 
