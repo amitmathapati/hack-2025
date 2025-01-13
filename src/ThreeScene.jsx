@@ -21,17 +21,31 @@ const Box = ({ position, onClick }) => {
   );
 };
 
-const Popup = ({ visible, onClose }) => {
+const Popup = ({ visible, onClose, onRowClick }) => {
   if (!visible) return null;
 
   return (
     <div style={popupStyle}>
-      <div style={rowStyle}>Row 1</div>
-      <div style={rowStyle}>Row 2</div>
+      {/* <div style={rowStyle}>Job Posting 1</div>
+      <div style={rowStyle}>Job Posting 2</div> */}
+      <div style={rowStyle} onClick={() => onRowClick('Job Posting 1')}>Job Posting 1</div>
+      <div style={rowStyle} onClick={() => onRowClick('Job Posting 2')}>Job Posting 2</div>
       <button onClick={onClose}>Close</button>
     </div>
   );
 };
+
+const DetailPopup = ({ visible, onClose, text }) => {
+  if (!visible) return null;
+
+  return (
+    <div style={detailPopupStyle}>
+      <div>{text}</div>
+      <button onClick={onClose}>Close</button>
+    </div>
+  );
+};
+
 
 const popupStyle = {
   position: 'absolute',
@@ -46,6 +60,17 @@ const popupStyle = {
 
 const rowStyle = {
   marginBottom: '10px',
+};
+
+const detailPopupStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '70%',
+  transform: 'translate(-50%, -50%)',
+  backgroundColor: 'white',
+  padding: '20px',
+  boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+  zIndex: 1000,
 };
 
 // const Avatar = ({ position }) => {
@@ -132,6 +157,8 @@ const rowStyle = {
 const ThreeScene = () => {
 
   const [popupVisible, setPopupVisible] = useState(false);
+  const [detailPopupVisible, setDetailPopupVisible] = useState(false);
+  const [detailText, setDetailText] = useState('');
 
   const handleBoxClick = () => {
     setPopupVisible(true);
@@ -139,6 +166,15 @@ const ThreeScene = () => {
 
   const handleClosePopup = () => {
     setPopupVisible(false);
+  };
+
+  const handleRowClick = (text) => {
+    setDetailText(text);
+    setDetailPopupVisible(true);
+  };
+
+  const handleCloseDetailPopup = () => {
+    setDetailPopupVisible(false);
   };
 
 
@@ -184,7 +220,9 @@ const ThreeScene = () => {
         </Canvas>
 
       {/* Popup */}
-      <Popup visible={popupVisible} onClose={handleClosePopup} />
+      <Popup visible={popupVisible} onClose={handleClosePopup} onRowClick={handleRowClick} />
+      {/* Detail Popup */}
+      <DetailPopup visible={detailPopupVisible} onClose={handleCloseDetailPopup} text={detailText} />
       </>
     );
   };
