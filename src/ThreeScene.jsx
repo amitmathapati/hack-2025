@@ -93,63 +93,7 @@ const Booth = ({ modelUrl, position }) => {
 // };
 
 
-
-
 const ThreeScene = () => {
-
-  // const [position, setPosition] = useState([0, 1.6, 10]);
-  // const [velocity, setVelocity] = useState([0, 0, 0]);
-
-
-  // useEffect(() => {
-  //   const handleKeyDown = (event) => {
-  //     switch (event.key) {
-  //       case 'w':
-  //         setVelocity([0, 0, -0.1]);
-  //         break;
-  //       case 's':
-  //         setVelocity([0, 0, 0.1]);
-  //         break;
-  //       case 'a':
-  //         setVelocity([-0.1, 0, 0]);
-  //         break;
-  //       case 'd':
-  //         setVelocity([0.1, 0, 0]);
-  //         break;
-  //       default:
-  //         break;
-  //     }
-  //   };
-
-  //   const handleKeyUp = (event) => {
-  //     switch (event.key) {
-  //       case 'w':
-  //       case 's':
-  //       case 'a':
-  //       case 'd':
-  //         setVelocity([0, 0, 0]);
-  //         break;
-  //       default:
-  //         break;
-  //     }
-  //   };
-
-  //   window.addEventListener('keydown', handleKeyDown);
-  //   window.addEventListener('keyup', handleKeyUp);
-
-  //   return () => {
-  //     window.removeEventListener('keydown', handleKeyDown);
-  //     window.removeEventListener('keyup', handleKeyUp);
-  //   };
-  // }, []);
-
-  // useFrame(() => {
-  //   setPosition((prev) => [
-  //     prev[0] + velocity[0],
-  //     prev[1] + velocity[1],
-  //     prev[2] + velocity[2],
-  //   ]);
-  // });
 
 
     return (
@@ -171,6 +115,7 @@ const ThreeScene = () => {
         <Booth modelUrl="/models/scene.gltf" position={[5, 0.1, -5]} scale={[0.1, 0.1, 0.1]} />
         <Booth modelUrl="/models/15ftbooth/scene.gltf" position={[600, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
         <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[1600, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
+        {/* <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[5, 0.1, 500]} scale={[0.1, 0.1, 0.1]} rotation={[0, Math.PI, 0]} /> */}
 
   
         {/* Movable Avatar */}
