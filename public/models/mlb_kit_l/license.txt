@@ -1,0 +1,11 @@
+Model Information:
+* title:	MLB Kit L
+* source:	https://sketchfab.com/3d-models/mlb-kit-l-e15821527c5d4abea8cb5b48a240aada
+* author:	mobilelightbox.us (https://sketchfab.com/mobilelightbox.us)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "MLB Kit L" (https://sketchfab.com/3d-models/mlb-kit-l-e15821527c5d4abea8cb5b48a240aada) by mobilelightbox.us (https://sketchfab.com/mobilelightbox.us) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

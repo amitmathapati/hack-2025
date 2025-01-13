@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ready Pop 8x8 Double Sided Display
+* source:	https://sketchfab.com/3d-models/ready-pop-8x8-double-sided-display-77da4254f4e64d28bf3097c039c5fb22
+* author:	exhibitbook (https://sketchfab.com/exhibitbook)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ready Pop 8x8 Double Sided Display" (https://sketchfab.com/3d-models/ready-pop-8x8-double-sided-display-77da4254f4e64d28bf3097c039c5fb22) by exhibitbook (https://sketchfab.com/exhibitbook) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

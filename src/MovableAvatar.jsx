@@ -8,9 +8,9 @@ const MovableAvatar = ({ position }) => {
   const [currentAction, setCurrentAction] = useState("Idle");
 
   // Load the avatar model and animations
-  const { scene, animations } = useGLTF(
-    "https://models.readyplayer.me/67830ccfc3b7b7b28d00b478.glb" // Replace with your animated avatar model
-  );
+//   const { scene, animations } = useGLTF("https://models.readyplayer.me/67830ccfc3b7b7b28d00b478.glb"); // Replace with your animated avatar model
+  const { scene, animations } = useGLTF("/avatar/kate-walk-1.gltf"); // Replace with your animated avatar model
+
   const { actions } = useAnimations(animations, avatarRef);
 
   // Handle keyboard input for movement
