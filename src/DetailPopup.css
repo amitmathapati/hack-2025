@@ -1,0 +1,33 @@
+.detail-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    z-index: 1000;
+    max-height: 600px; /* Set a maximum height for the popup */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  .detail-popup-content {
+    overflow-x: auto; 
+    background-color: #f0f0f0; 
+    padding: 10px;
+    border-radius: 3px; 
+  }
+  
+  .close-button {
+    margin-top: 10px; 
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #ccc;
+    color: #333;
+    cursor: pointer;
+  }
+
+ 

@@ -1,32 +1,30 @@
-About the job
-Meta's Privacy Engineering organization is seeking a passionate engineer to identify, advise, investigate and mitigate privacy violations and/or exposures in our products. Your skills will be the foundation for understanding privacy risks in Meta initiatives by being the technical advocate for privacy decisions and discussions across the company. You will be relied upon to provide engineering and product teams with the privacy expertise necessary to make confident product decisions.
-
-Privacy Engineer, Implementation Review Responsibilities:
-
-Play a key role in driving code and architecture reviews as well as large cross-company privacy reviews of products and features.
-Conduct technical reviews for new features and identify privacy concerns. Work closely with technical and non-technical teams, including Engineering, Product and Legal.
-Provide product teams with the guidance and best practices to help protect users privacy and mitigate any risk. Work closely with Security and Privacy leaders to help define goals that are properly aligned to company-wide goals.
-Define and articulate a clear vision for privacy, and influence leaders across all of Meta to adopt a balanced view of product and privacy goals in overall decision-making.
-
-Minimum Qualifications:
-
-4+ years work experience in technical privacy, security, or software engineering, with a focus on designing and developing privacy or security sensitive systems.
-2+ years work experience coding in Python, PHP, Java, C/C++ (or equivalent language) including code maintenance and review.
-
-Preferred Qualifications:
-
-Experience within a corporate environment describing technical issues and their implications to other areas of the business.
-Technical contributions to the privacy or security community (e.g., public research, blogging, presentations).
-B.S. or M.S. in Computer Science or a related field
-
-About Meta:
-
-Meta builds technologies that help people connect, find communities, and grow businesses. When Facebook launched in 2004, it changed the way people connect. Apps like Messenger, Instagram and WhatsApp further empowered billions around the world. Now, Meta is moving beyond 2D screens toward immersive experiences like augmented and virtual reality to help build the next evolution in social technology. People who choose to build their careers by building with us at Meta help shape a future that will take us beyond what digital connection makes possible today—beyond the constraints of screens, the limits of distance, and even the rules of physics.
-
-Meta is proud to be an Equal Employment Opportunity and Affirmative Action employer. We do not discriminate based upon race, religion, color, national origin, sex (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender, gender identity, gender expression, transgender status, sexual stereotypes, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics. We also consider qualified applicants with criminal histories, consistent with applicable federal, state and local law. Meta participates in the E-Verify program in certain locations, as required by law. Please note that Meta may leverage artificial intelligence and machine learning technologies in connection with applications for employment.
-
-Meta is committed to providing reasonable accommodations for candidates with disabilities in our recruiting process. If you need any assistance or accommodations due to a disability, please let us know at accommodations-ext@fb.com.
-
-$147,000/year to $208,000/year + bonus + equity + benefits
-
-Individual compensation is determined by skills, qualifications, experience, and location. Compensation details listed in this posting reflect the base hourly rate, monthly rate, or annual salary only, and do not include bonus, equity or sales incentives, if applicable. In addition to base compensation, Meta offers benefits. Learn more about  benefits  at Meta.
+<h2 class="text-heading-large mb4">About the job</h2>
+<div class="feed-shared-inline-show-more-text
+        
+        
+        feed-shared-inline-show-more-text--10-lines
+        feed-shared-inline-show-more-text--expanded
+        feed-shared-inline-show-more-text--on-newline
+        
+         text-body-small-open m0" tabindex="-1">
+<p dir="ltr">Meta's Privacy Engineering organization is seeking a passionate engineer to identify, advise, investigate and mitigate privacy violations and/or exposures in our products. Your skills will be the foundation for understanding privacy risks in Meta initiatives by being the technical advocate for privacy decisions and discussions across the company. You will be relied upon to provide engineering and product teams with the privacy expertise necessary to make confident product decisions.<br /><br />Privacy Engineer, Implementation Review Responsibilities:<br /><br /></p>
+<ul>
+<li>Play a key role in driving code and architecture reviews as well as large cross-company privacy reviews of products and features.</li>
+<li>Conduct technical reviews for new features and identify privacy concerns. Work closely with technical and non-technical teams, including Engineering, Product and Legal.</li>
+<li>Provide product teams with the guidance and best practices to help protect users privacy and mitigate any risk. Work closely with Security and Privacy leaders to help define goals that are properly aligned to company-wide goals.</li>
+<li>Define and articulate a clear vision for privacy, and influence leaders across all of Meta to adopt a balanced view of product and privacy goals in overall decision-making.<br /><br /></li>
+</ul>
+<p dir="ltr">Minimum Qualifications:<br /><br /></p>
+<ul>
+<li>4+ years work experience in technical privacy, security, or software engineering, with a focus on designing and developing privacy or security sensitive systems.</li>
+<li>2+ years work experience coding in Python, PHP, Java, C/C++ (or equivalent language) including code maintenance and review.<br /><br /></li>
+</ul>
+<p dir="ltr">Preferred Qualifications:<br /><br /></p>
+<ul>
+<li>Experience within a corporate environment describing technical issues and their implications to other areas of the business.</li>
+<li>Technical contributions to the privacy or security community (e.g., public research, blogging, presentations).</li>
+<li>B.S. or M.S. in Computer Science or a related field<br /><br /></li>
+</ul>
+<p dir="ltr">About Meta:<br /><br />Meta builds technologies that help people connect, find communities, and grow businesses. When Facebook launched in 2004, it changed the way people connect. Apps like Messenger, Instagram and WhatsApp further empowered billions around the world. Now, Meta is moving beyond 2D screens toward immersive experiences like augmented and virtual reality to help build the next evolution in social technology. People who choose to build their careers by building with us at Meta help shape a future that will take us beyond what digital connection makes possible today&mdash;beyond the constraints of screens, the limits of distance, and even the rules of physics.<br /><br />Meta is proud to be an Equal Employment Opportunity and Affirmative Action employer. We do not discriminate based upon race, religion, color, national origin, sex (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender, gender identity, gender expression, transgender status, sexual stereotypes, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics. We also consider qualified applicants with criminal histories, consistent with applicable federal, state and local law. Meta participates in the E-Verify program in certain locations, as required by law. Please note that Meta may leverage artificial intelligence and machine learning technologies in connection with applications for employment.<br /><br />Meta is committed to providing reasonable accommodations for candidates with disabilities in our recruiting process. If you need any assistance or accommodations due to a disability, please let us know at accommodations-ext@fb.com.<br /><br />$147,000/year to $208,000/year + bonus + equity + benefits<br /><br />Individual compensation is determined by skills, qualifications, experience, and location. Compensation details listed in this posting reflect the base hourly rate, monthly rate, or annual salary only, and do not include bonus, equity or sales incentives, if applicable. In addition to base compensation, Meta offers benefits. Learn more about <a class="wNXfUmwVHEHtvFOczjBCXZmEBwNXfXbqg " href="https://www.metacareers.com/facebook-life/benefits" target="_blank" rel="noopener" data-test-app-aware-link=""> benefits </a> at Meta.</p>
+<p>https://www.linkedin.com/jobs/view/4120823527/</p>
+</div>

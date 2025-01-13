@@ -6,99 +6,15 @@ import MovableAvatar from "./MovableAvatar";
 import CameraController from "./CameraController";
 import * as THREE from "three";
 import { mx_bilerp_1 } from "three/src/nodes/materialx/lib/mx_noise.js";
+import Box from "./Box";
+import Popup from "./Popup";
+import DetailPopup from "./DetailPopup";
 
 const Booth = ({ modelUrl, position }) => {
   const { scene } = useGLTF(modelUrl);
   return <primitive object={scene} position={position} scale={[0.1, 0.1, 0.1]} castShadow />;
 };
 
-const Box = ({ position, onClick }) => {
-  return (
-    <mesh position={position} onClick={onClick}>
-      <boxGeometry args={[20, 20, 5]} />
-      <meshStandardMaterial color="yellow" />
-    </mesh>
-  );
-};
-
-// const Popup = ({ visible, onClose, onRowClick }) => {
-//   if (!visible) return null;
-
-//   return (
-//     <div style={popupStyle}>
-//       {/* <div style={rowStyle}>Job Posting 1</div>
-//       <div style={rowStyle}>Job Posting 2</div> */}
-//       <div style={rowStyle} onClick={() => onRowClick('Job Posting 1')}>Sr. Staff Software Engineer - Twitter Ads</div>
-//       <div style={rowStyle} onClick={() => onRowClick('Job Posting 2')}>Staff Software Engineer - Twitter Infra</div>
-//       <button onClick={onClose}>Close</button>
-//     </div>
-//   );
-// };
-
-// const DetailPopup = ({ visible, onClose, text }) => {
-//   if (!visible) return null;
-
-//   return (
-//     <div style={detailPopupStyle}>
-//       <div>{text}</div>
-//       <button onClick={onClose}>Close</button>
-//     </div>
-//   );
-// };
-
-const Popup = ({ visible, onClose, onRowClick, rows }) => {
-  if (!visible) return null;
-
-  return (
-    <div style={popupStyle}>
-      {rows.map((row, index) => (
-        <div key={index} style={rowStyle} onClick={() => onRowClick(row)}>
-          {row}
-        </div>
-      ))}
-      <button onClick={onClose}>Close</button>
-    </div>
-  );
-};
-
-const DetailPopup = ({ visible, onClose, text }) => {
-  if (!visible) return null;
-
-  return (
-    <div style={detailPopupStyle}>
-      <div>{text}</div>
-      <button onClick={onClose}>Close</button>
-    </div>
-  );
-};
-
-
-const popupStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  backgroundColor: 'white',
-  padding: '20px',
-  boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
-  zIndex: 1000,
-};
-
-const rowStyle = {
-  marginBottom: '10px',
-  cursor: 'pointer',
-};
-
-const detailPopupStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '70%',
-  transform: 'translate(-50%, -50%)',
-  backgroundColor: 'white',
-  padding: '20px',
-  boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
-  zIndex: 1000,
-};
 
 // const Avatar = ({ position }) => {
 //   const avatarRef = useRef();
@@ -201,6 +117,7 @@ const ThreeScene = () => {
 
   const handleClosePopup = () => {
     setPopupVisible(false);
+    setDetailPopupVisible(false);
   };
 
   const handleRowClick = async (row) => {

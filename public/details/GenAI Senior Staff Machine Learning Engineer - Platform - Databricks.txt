@@ -1,52 +1,28 @@
-About the job
-P-984
-
-Founded in late 2020 by a small group of machine learning researchers, Mosaic AI enables companies to create state-of-the-art AI models from scratch on their own data. From a business perspective, Mosaic AI is committed to the belief that a company’s AI models are just as valuable as any other core IP, and that high-quality AI models should be available to all. From a scientific perspective, Mosaic AI is committed to reducing the cost of training state-of-the-art models - and sharing our knowledge about how to do so with the world - to allow everyone to innovate and create models of their own.
-
-Now part of Databricks since July 2023 as the GenAI Team, we are passionate about enabling our customers to solve the world's toughest problems by building and running the world's best data and AI platform. We leap at every opportunity to solve technical challenges, striving to empower our customers with the best data and AI capabilities.
-
-Summary
-
-Databricks is hiring a Senior Staff Machine Learning Engineer to play a key role in building our Generative AI platform and products, and in developing our team of software engineers.
-
-You Will
-
-Serve as a technical lead, overseeing and supervising projects and engineers on the team.
-Play a leading hands-on role in the design and implementation of our ML infrastructure and GenAI platform software technologies
-Drive our technology vision and roadmap
-Establish software development best practices, and lead by example in applying them
-Develop our engineering organization and culture through hiring, mentoring, and feedback.
-
-We Look For
-
-8+ years of hands-on programming experience with at least one modern language such as Python, Go, or C++
-8+ years of experience contributing to the architecture and design of large scale distributed systems and/or ML systems and tools
-Strong sense of software design and usability of ML systems
-Experience applying software engineering methodologies and best practices including coding standards, code reviews, build processes, testing, and security.
-Prior experience in developing public cloud services or open source ML software is an advantage.
-
-We value candidates who are curious about all parts of the company's success and are willing to learn new skills and technologies along the way.
-
-Pay Range Transparency
-
-Databricks is committed to fair and equitable compensation practices. The pay range(s) for this role is listed below and represents base salary range for non-commissionable roles or on-target earnings for commissionable roles. Actual compensation packages are based on several factors that are unique to each candidate, including but not limited to job-related skills, depth of experience, relevant certifications and training, and specific work location. Based on the factors above, Databricks utilizes the full width of the range. The total compensation package for this position may also include eligibility for annual performance bonus, equity, and the benefits listed above. For more information regarding which range your location is in visit our page here.
-
-Local Pay Range
-
-$232,000—$313,000 USD
-
-About Databricks
-
-Databricks is the data and AI company. More than 10,000 organizations worldwide — including Comcast, Condé Nast, Grammarly, and over 50% of the Fortune 500 — rely on the Databricks Data Intelligence Platform to unify and democratize data, analytics and AI. Databricks is headquartered in San Francisco, with offices around the globe and was founded by the original creators of Lakehouse, Apache Spark™, Delta Lake and MLflow. To learn more, follow Databricks on Twitter, LinkedIn and Facebook.
-
-Benefits
-
-At Databricks, we strive to provide comprehensive benefits and perks that meet the needs of all of our employees. For specific details on the benefits offered in your region, please visit https://www.mybenefitsnow.com/databricks.
-
-Our Commitment to Diversity and Inclusion
-
-At Databricks, we are committed to fostering a diverse and inclusive culture where everyone can excel. We take great care to ensure that our hiring practices are inclusive and meet equal employment opportunity standards. Individuals looking for employment at Databricks are considered without regard to age, color, disability, ethnicity, family or marital status, gender identity or expression, language, national origin, physical and mental ability, political affiliation, race, religion, sexual orientation, socio-economic status, veteran status, and other protected characteristics.
-
-Compliance
-
-If access to export-controlled technology or source code is required for performance of job duties, it is within Employer's discretion whether to apply for a U.S. government license for such positions, and Employer may decline to proceed with an applicant on this basis alone.
+<h2 class="text-heading-large mb4">About the job</h2>
+<div class="feed-shared-inline-show-more-text
+        
+        
+        feed-shared-inline-show-more-text--10-lines
+        feed-shared-inline-show-more-text--expanded
+        feed-shared-inline-show-more-text--on-newline
+        
+         text-body-small-open m0" tabindex="-1">
+<p dir="ltr">P-984<br /><br />Founded in late 2020 by a small group of machine learning researchers, Mosaic AI enables companies to create state-of-the-art AI models from scratch on their own data. From a business perspective, Mosaic AI is committed to the belief that a company&rsquo;s AI models are just as valuable as any other core IP, and that high-quality AI models should be available to all. From a scientific perspective, Mosaic AI is committed to reducing the cost of training state-of-the-art models - and sharing our knowledge about how to do so with the world - to allow everyone to innovate and create models of their own.<br /><br />Now part of Databricks since July 2023 as the GenAI Team, we are passionate about enabling our customers to solve the world's toughest problems by building and running the world's best data and AI platform. We leap at every opportunity to solve technical challenges, striving to empower our customers with the best data and AI capabilities.<br /><br /><strong>Summary<br /><br /></strong>Databricks is hiring a Senior Staff Machine Learning Engineer to play a key role in building our Generative AI platform and products, and in developing our team of software engineers.<br /><br /><strong>You Will<br /><br /></strong></p>
+<ul>
+<li>Serve as a technical lead, overseeing and supervising projects and engineers on the team.</li>
+<li>Play a leading hands-on role in the design and implementation of our ML infrastructure and GenAI platform software technologies</li>
+<li>Drive our technology vision and roadmap</li>
+<li>Establish software development best practices, and lead by example in applying them</li>
+<li>Develop our engineering organization and culture through hiring, mentoring, and feedback.<br /><br /></li>
+</ul>
+<p dir="ltr"><strong>We Look For<br /><br /></strong></p>
+<ul>
+<li>8+ years of hands-on programming experience with at least one modern language such as Python, Go, or C++</li>
+<li>8+ years of experience contributing to the architecture and design of large scale distributed systems and/or ML systems and tools</li>
+<li>Strong sense of software design and usability of ML systems</li>
+<li>Experience applying software engineering methodologies and best practices including coding standards, code reviews, build processes, testing, and security.</li>
+<li>Prior experience in developing public cloud services or open source ML software is an advantage.<br /><br /></li>
+</ul>
+<p dir="ltr">We value candidates who are curious about all parts of the company's success and are willing to learn new skills and technologies along the way.<br /><br /><strong>Pay Range Transparency<br /><br /></strong>Databricks is committed to fair and equitable compensation practices. The pay range(s) for this role is listed below and represents base salary range for non-commissionable roles or on-target earnings for commissionable roles. Actual compensation packages are based on several factors that are unique to each candidate, including but not limited to job-related skills, depth of experience, relevant certifications and training, and specific work location. Based on the factors above, Databricks utilizes the full width of the range. The total compensation package for this position may also include eligibility for annual performance bonus, equity, and the benefits listed above. For more information regarding which range your location is in visit our page <a class="wNXfUmwVHEHtvFOczjBCXZmEBwNXfXbqg " href="https://www.databricks.com/sites/default/files/2024-08/us-pay-zone-mapping.pdf" target="_blank" rel="noopener" data-test-app-aware-link="">here</a>.<br /><br />Local Pay Range<br /><br />$232,000&mdash;$313,000 USD<br /><br /><strong>About Databricks<br /><br /></strong>Databricks is the data and AI company. More than 10,000 organizations worldwide &mdash; including Comcast, Cond&eacute; Nast, Grammarly, and over 50% of the Fortune 500 &mdash; rely on the Databricks Data Intelligence Platform to unify and democratize data, analytics and AI. Databricks is headquartered in San Francisco, with offices around the globe and was founded by the original creators of Lakehouse, Apache Spark&trade;, Delta Lake and MLflow. To learn more, follow Databricks on <a class="wNXfUmwVHEHtvFOczjBCXZmEBwNXfXbqg " href="https://twitter.com/databricks" target="_blank" rel="noopener" data-test-app-aware-link="">Twitter</a>, <a class="wNXfUmwVHEHtvFOczjBCXZmEBwNXfXbqg " href="https://www.linkedin.com/company/databricks" target="_blank" rel="noopener" data-test-app-aware-link="">LinkedIn</a> and <a class="wNXfUmwVHEHtvFOczjBCXZmEBwNXfXbqg " href="https://www.facebook.com/databricksinc" target="_blank" rel="noopener" data-test-app-aware-link="">Facebook</a>.<br /><br /><strong>Benefits<br /><br /></strong>At Databricks, we strive to provide comprehensive benefits and perks that meet the needs of all of our employees. For specific details on the benefits offered in your region, please visit <a class="wNXfUmwVHEHtvFOczjBCXZmEBwNXfXbqg " href="https://www.mybenefitsnow.com/databricks" target="_blank" rel="noopener" data-test-app-aware-link="">https://www.mybenefitsnow.com/databricks</a>.<br /><br /><strong>Our Commitment to Diversity and Inclusion<br /><br /></strong>At Databricks, we are committed to fostering a diverse and inclusive culture where everyone can excel. We take great care to ensure that our hiring practices are inclusive and meet equal employment opportunity standards. Individuals looking for employment at Databricks are considered without regard to age, color, disability, ethnicity, family or marital status, gender identity or expression, language, national origin, physical and mental ability, political affiliation, race, religion, sexual orientation, socio-economic status, veteran status, and other protected characteristics.<br /><br /><strong>Compliance<br /><br /></strong><strong>If access to export-controlled technology or source code is required for performance of job duties, it is within Employer's discretion whether to apply for a U.S. government license for such positions, and Employer may decline to proceed with an applicant on this basis alone.</strong></p>
+<p>https://www.linkedin.com/jobs/view/3730450917/</p>
+</div>

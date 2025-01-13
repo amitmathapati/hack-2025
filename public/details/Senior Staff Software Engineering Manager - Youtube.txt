@@ -1,32 +1,31 @@
-About the job
-Minimum qualifications:
-
-Bachelor’s degree, or equivalent practical experience. 
-5 years of experience with software development in one or more programming languages (e.g., Python, C, C++, Java, Javascript).
-5 years of experience in a technical leadership role; overseeing projects, with 5 years of experience in a people management, supervision/team leadership role.
-
-Preferred qualifications:
-
-Master's degree or PhD in Computer Science or related technical field. 
-5 years of experience working in a complex, matrixed organization. 
-
-About The Job
-
-Like Google's own ambitions, the work of a Software Engineer (SWE) goes way beyond just Search. SWE Managers have not only the technical expertise to take on and provide technical leadership to major projects, but also manage a team of engineers. You not only optimize your own code but make sure engineers are able to optimize theirs. As a SWE Manager you manage your project goals, contribute to product strategy and help develop your team. SWE teams work all across the company, in areas such as information retrieval, artificial intelligence, natural language processing, distributed computing, large-scale system design, networking, security, data compression, user interface design; the list goes on and is growing every day. Operating with scale and speed, our exceptional software engineers are just getting started -- and as a manager, you guide the way.
-
-At YouTube, we believe that everyone deserves to have a voice, and that the world is a better place when we listen, share, and build community through our stories. We work together to give everyone the power to share their story, explore what they love, and connect with one another in the process. Working at the intersection of cutting-edge technology and boundless creativity, we move at the speed of culture with a shared goal to show people the world. We explore new ideas, solve real problems, and have fun — and we do it all together.
-
-The US base salary range for this full-time position is $237,000-$337,000 + bonus + equity + benefits. Our salary ranges are determined by role, level, and location. The range displayed on each job posting reflects the minimum and maximum target salaries for the position across all US locations. Within the range, individual pay is determined by work location and additional factors, including job-related skills, experience, and relevant education or training. Your recruiter can share more about the specific salary range for your preferred location during the hiring process.
-
-Please note that the compensation details listed in US role postings reflect the base salary only, and do not include bonus, equity, or benefits. Learn more about benefits at Google .
-
-Responsibilities
-
-Set and communicate team priorities that support the broader organization's goals. Align strategy, processes, and decision-making across teams.
-Set clear expectations with individuals based on their level and role and aligned to the broader organization's goals. Meet regularly with individuals to discuss performance and development and provide feedback and coaching.
-Develop the long-term technical vision and roadmap within, and often beyond, the scope of your teams. Evolve the roadmap to meet anticipated future requirements and infrastructure needs.
-Oversee systems designs within the scope of the broader area, and review product or system development code to solve ambiguous problems. 
-Review code developed by other engineers and provide feedback to ensure best practices (e.g., style guidelines, checking code in, accuracy, testability, and efficiency). 
-
-
-Google is proud to be an equal opportunity workplace and is an affirmative action employer. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status. We also consider qualified applicants regardless of criminal histories, consistent with legal requirements. See also Google's EEO Policy and EEO is the Law. If you have a disability or special need that requires accommodation, please let us know by completing our Accommodations for Applicants form .
+<h2 class="text-heading-large mb4">About the job</h2>
+<div class="feed-shared-inline-show-more-text
+        
+        
+        feed-shared-inline-show-more-text--10-lines
+        feed-shared-inline-show-more-text--expanded
+        feed-shared-inline-show-more-text--on-newline
+        
+         text-body-small-open m0" tabindex="-1">
+<p dir="ltr"><strong>Minimum qualifications:<br /><br /></strong></p>
+<ul>
+<li>Bachelor&rsquo;s degree, or equivalent practical experience.</li>
+<li>5 years of experience with software development in one or more programming languages (e.g., Python, C, C++, Java, Javascript).</li>
+<li>5 years of experience in a technical leadership role; overseeing projects, with 5 years of experience in a people management, supervision/team leadership role.<br /><br /></li>
+</ul>
+<p dir="ltr"><strong>Preferred qualifications:<br /><br /></strong></p>
+<ul>
+<li>Master's degree or PhD in Computer Science or related technical field.</li>
+<li>5 years of experience working in a complex, matrixed organization. <br /><br /></li>
+</ul>
+<p dir="ltr"><strong>About The Job<br /><br /></strong>Like Google's own ambitions, the work of a Software Engineer (SWE) goes way beyond just Search. SWE Managers have not only the technical expertise to take on and provide technical leadership to major projects, but also manage a team of engineers. You not only optimize your own code but make sure engineers are able to optimize theirs. As a SWE Manager you manage your project goals, contribute to product strategy and help develop your team. SWE teams work all across the company, in areas such as information retrieval, artificial intelligence, natural language processing, distributed computing, large-scale system design, networking, security, data compression, user interface design; the list goes on and is growing every day. Operating with scale and speed, our exceptional software engineers are just getting started -- and as a manager, you guide the way.<br /><br />At YouTube, we believe that everyone deserves to have a voice, and that the world is a better place when we listen, share, and build community through our stories. We work together to give everyone the power to share their story, explore what they love, and connect with one another in the process. Working at the intersection of cutting-edge technology and boundless creativity, we move at the speed of culture with a shared goal to show people the world. We explore new ideas, solve real problems, and have fun &mdash; and we do it all together.<br /><br />The US base salary range for this full-time position is $237,000-$337,000 + bonus + equity + benefits. Our salary ranges are determined by role, level, and location. The range displayed on each job posting reflects the minimum and maximum target salaries for the position across all US locations. Within the range, individual pay is determined by work location and additional factors, including job-related skills, experience, and relevant education or training. Your recruiter can share more about the specific salary range for your preferred location during the hiring process.<br /><br />Please note that the compensation details listed in US role postings reflect the base salary only, and do not include bonus, equity, or benefits. Learn more about benefits at Google .<br /><br /><strong>Responsibilities<br /><br /></strong></p>
+<ul>
+<li>Set and communicate team priorities that support the broader organization's goals. Align strategy, processes, and decision-making across teams.</li>
+<li>Set clear expectations with individuals based on their level and role and aligned to the broader organization's goals. Meet regularly with individuals to discuss performance and development and provide feedback and coaching.</li>
+<li>Develop the long-term technical vision and roadmap within, and often beyond, the scope of your teams. Evolve the roadmap to meet anticipated future requirements and infrastructure needs.</li>
+<li>Oversee systems designs within the scope of the broader area, and review product or system development code to solve ambiguous problems.</li>
+<li>Review code developed by other engineers and provide feedback to ensure best practices (e.g., style guidelines, checking code in, accuracy, testability, and efficiency). <br /><br /><br /></li>
+</ul>
+<p dir="ltr">Google is proud to be an equal opportunity workplace and is an affirmative action employer. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status. We also consider qualified applicants regardless of criminal histories, consistent with legal requirements. See also Google's EEO Policy and EEO is the Law. If you have a disability or special need that requires accommodation, please let us know by completing our Accommodations for Applicants form .</p>
+<p>https://www.linkedin.com/jobs/view/4120734961/ </p>
+</div>

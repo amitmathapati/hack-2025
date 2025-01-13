@@ -1,40 +1,38 @@
-About the job
-As part of Meta Security, our Insider Trust team is focused on identifying and responding to insider threats to data. The team's mission is to identify malicious use of otherwise legitimate access to data from people inside the company and respond to it before damage is done. We investigate across a broad spectrum of abuse including abuse of user data, intellectual property, and leaks of sensitive information. We collaborate with software engineering teams to build advanced detection capabilities and understand how abuse happens so that we can stay ahead of those who are interested in misusing their access. The Insider Trust team is looking for a highly motivated Security Engineer to build and improve internal tools and systems to detect malicious activities related to insider threats. Candidates are expected to analyze and monitor internal tools, hunt for insider threats against company data and infrastructure, and have the ability to carry out complex internal investigations from collection to reporting. As part of the role, this person will work side by side with our engineering teams to build advanced detection solutions to help keep systems and information safe, and partner closely with our Human Resources and Legal teams to carry out complex investigations.
-
-Security Detection Engineer, Insider Trust Responsibilities:
-
-Lead cross-functional projects to improve our GenAI capabilities to effectively detect and respond to internal threats and security incidents
-Leverage threat modeling and analysis to build event and/or behavioral based detections to protect our critical GenAI assets and infrastructure
-Perform analysis of logs from a variety of sources (e.g., individual host logs, network traffic logs) to identify potential insider threats
-Build operational workflows and actions that auto-resolve false positives and provide context scaling our ability to investigate
-Identify gaps in our infrastructure, and work with software engineers, product managers, and business partners to gain visibility through logging and detection
-
-Minimum Qualifications:
-
-Bachelor's degree in Computer Science, Engineering, or equivalent experience
-5+ years of experience in Detection & Response Engineering or similar Security Engineering role
-Experience developing detections using event or anomaly based methods
-Experience interpreting information from multiple sources and working with data sets
-Experience with database tools/systems such as SQL, HQL
-Coding proficiency in Python
-
-Preferred Qualifications:
-
-M.S. or PhD in Computer Science or related field, or equivalent experience
-Experience conducting technical security investigations (response, forensics, log analysis)
-Experience with anomaly detection applicable to the insider threat detection space
-Experience in system, network, and/or application security
-Coding proficiency in OOP languages, e.g. PHP, C++, etc.
-Coding proficiency in Pandas, NumPy, Scikit-learn, TensorFlow
-
-About Meta:
-
-Meta builds technologies that help people connect, find communities, and grow businesses. When Facebook launched in 2004, it changed the way people connect. Apps like Messenger, Instagram and WhatsApp further empowered billions around the world. Now, Meta is moving beyond 2D screens toward immersive experiences like augmented and virtual reality to help build the next evolution in social technology. People who choose to build their careers by building with us at Meta help shape a future that will take us beyond what digital connection makes possible today—beyond the constraints of screens, the limits of distance, and even the rules of physics.
-
-Meta is proud to be an Equal Employment Opportunity and Affirmative Action employer. We do not discriminate based upon race, religion, color, national origin, sex (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender, gender identity, gender expression, transgender status, sexual stereotypes, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics. We also consider qualified applicants with criminal histories, consistent with applicable federal, state and local law. Meta participates in the E-Verify program in certain locations, as required by law. Please note that Meta may leverage artificial intelligence and machine learning technologies in connection with applications for employment.
-
-Meta is committed to providing reasonable accommodations for candidates with disabilities in our recruiting process. If you need any assistance or accommodations due to a disability, please let us know at accommodations-ext@fb.com.
-
-$147,000/year to $208,000/year + bonus + equity + benefits
-
-Individual compensation is determined by skills, qualifications, experience, and location. Compensation details listed in this posting reflect the base hourly rate, monthly rate, or annual salary only, and do not include bonus, equity or sales incentives, if applicable. In addition to base compensation, Meta offers benefits. Learn more about  benefits  at Meta.
+<h2 class="text-heading-large mb4">About the job</h2>
+<div class="feed-shared-inline-show-more-text
+        
+        
+        feed-shared-inline-show-more-text--10-lines
+        feed-shared-inline-show-more-text--expanded
+        feed-shared-inline-show-more-text--on-newline
+        
+         text-body-small-open m0" tabindex="-1">
+<p dir="ltr">As part of Meta Security, our Insider Trust team is focused on identifying and responding to insider threats to data. The team's mission is to identify malicious use of otherwise legitimate access to data from people inside the company and respond to it before damage is done. We investigate across a broad spectrum of abuse including abuse of user data, intellectual property, and leaks of sensitive information. We collaborate with software engineering teams to build advanced detection capabilities and understand how abuse happens so that we can stay ahead of those who are interested in misusing their access. The Insider Trust team is looking for a highly motivated Security Engineer to build and improve internal tools and systems to detect malicious activities related to insider threats. Candidates are expected to analyze and monitor internal tools, hunt for insider threats against company data and infrastructure, and have the ability to carry out complex internal investigations from collection to reporting. As part of the role, this person will work side by side with our engineering teams to build advanced detection solutions to help keep systems and information safe, and partner closely with our Human Resources and Legal teams to carry out complex investigations.<br /><br />Security Detection Engineer, Insider Trust Responsibilities:<br /><br /></p>
+<ul>
+<li>Lead cross-functional projects to improve our GenAI capabilities to effectively detect and respond to internal threats and security incidents</li>
+<li>Leverage threat modeling and analysis to build event and/or behavioral based detections to protect our critical GenAI assets and infrastructure</li>
+<li>Perform analysis of logs from a variety of sources (e.g., individual host logs, network traffic logs) to identify potential insider threats</li>
+<li>Build operational workflows and actions that auto-resolve false positives and provide context scaling our ability to investigate</li>
+<li>Identify gaps in our infrastructure, and work with software engineers, product managers, and business partners to gain visibility through logging and detection<br /><br /></li>
+</ul>
+<p dir="ltr">Minimum Qualifications:<br /><br /></p>
+<ul>
+<li>Bachelor's degree in Computer Science, Engineering, or equivalent experience</li>
+<li>5+ years of experience in Detection &amp; Response Engineering or similar Security Engineering role</li>
+<li>Experience developing detections using event or anomaly based methods</li>
+<li>Experience interpreting information from multiple sources and working with data sets</li>
+<li>Experience with database tools/systems such as SQL, HQL</li>
+<li>Coding proficiency in Python<br /><br /></li>
+</ul>
+<p dir="ltr">Preferred Qualifications:<br /><br /></p>
+<ul>
+<li>M.S. or PhD in Computer Science or related field, or equivalent experience</li>
+<li>Experience conducting technical security investigations (response, forensics, log analysis)</li>
+<li>Experience with anomaly detection applicable to the insider threat detection space</li>
+<li>Experience in system, network, and/or application security</li>
+<li>Coding proficiency in OOP languages, e.g. PHP, C++, etc.</li>
+<li>Coding proficiency in Pandas, NumPy, Scikit-learn, TensorFlow<br /><br /></li>
+</ul>
+<p dir="ltr">About Meta:<br /><br />Meta builds technologies that help people connect, find communities, and grow businesses. When Facebook launched in 2004, it changed the way people connect. Apps like Messenger, Instagram and WhatsApp further empowered billions around the world. Now, Meta is moving beyond 2D screens toward immersive experiences like augmented and virtual reality to help build the next evolution in social technology. People who choose to build their careers by building with us at Meta help shape a future that will take us beyond what digital connection makes possible today&mdash;beyond the constraints of screens, the limits of distance, and even the rules of physics.<br /><br />Meta is proud to be an Equal Employment Opportunity and Affirmative Action employer. We do not discriminate based upon race, religion, color, national origin, sex (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender, gender identity, gender expression, transgender status, sexual stereotypes, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics. We also consider qualified applicants with criminal histories, consistent with applicable federal, state and local law. Meta participates in the E-Verify program in certain locations, as required by law. Please note that Meta may leverage artificial intelligence and machine learning technologies in connection with applications for employment.<br /><br />Meta is committed to providing reasonable accommodations for candidates with disabilities in our recruiting process. If you need any assistance or accommodations due to a disability, please let us know at accommodations-ext@fb.com.<br /><br />$147,000/year to $208,000/year + bonus + equity + benefits<br /><br />Individual compensation is determined by skills, qualifications, experience, and location. Compensation details listed in this posting reflect the base hourly rate, monthly rate, or annual salary only, and do not include bonus, equity or sales incentives, if applicable. In addition to base compensation, Meta offers benefits. Learn more about <a class="wNXfUmwVHEHtvFOczjBCXZmEBwNXfXbqg " href="https://www.metacareers.com/facebook-life/benefits" target="_blank" rel="noopener" data-test-app-aware-link=""> benefits </a> at Meta.</p>
+<p>https://www.linkedin.com/jobs/view/4120826309/</p>
+</div>
