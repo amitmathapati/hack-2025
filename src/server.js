@@ -1,25 +1,34 @@
-const express = require('express');
-const { AccessToken } = require('livekit-server-sdk');
+// server.js
+import express from 'express';
+import { AccessToken } from 'livekit-server-sdk';
+import cors from 'cors';
+
+const apiKey = 'API4cdcBLemXMvZ';
+const apiSecret = 'f9ipJ7cG9xeQTRGhD4Cw2JYcfMKwzyyUlYGZmtu9QIbA';
+
+const createToken = async () => {
+  const roomName = 'quickstart-room';
+  const participantName = 'quickstart-username';
+
+  const at = new AccessToken(apiKey, apiSecret, {
+    identity: participantName,
+    // Token to expire after 10 minutes
+    ttl: '10m',
+  });
+  at.addGrant({ roomJoin: true, roomCreate: true, room: roomName });
+
+  return await at.toJwt();
+};
+
 const app = express();
+app.use(cors({ origin: 'http://localhost:3000' }));
 
-const apiKey = 'devkey'; // Replace with your LiveKit API key
-const apiSecret = 'secret'; // Replace with your LiveKit API secret
+const port = 3001;
 
-// app.get('/generate-token', (req, res) => {
-//   const identity = req.query.identity || 'user-' + Math.floor(Math.random() * 1000);
-//   const token = new AccessToken(apiKey, apiSecret, { identity });
-//   token.addGrant({ roomJoin: true, room: 'default-room' });
-//   res.json({ token: token.toJwt() });
-// });
-
-app.get('/generate-token', (req, res) => {
-  const identity = req.query.identity || 'user-' + Math.floor(Math.random() * 1000);
-  const roomName = 'voice-chat-room'; // Use a specific room name
-  const token = new AccessToken(apiKey, apiSecret, { identity });
-  token.addGrant({ roomJoin: true, room: roomName }); // Specify the room name here
-  res.json({ token: token.toJwt(), room: roomName });
+app.get('/generate-token', async (req, res) => {
+  res.send(await createToken());
 });
 
-app.listen(3001, () => {
-  console.log('Server is running on http://localhost:3001');
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });

@@ -6,26 +6,13 @@ import {
   RoomAudioRenderer,
   BarVisualizer,
 } from '@livekit/components-react';
+import '@livekit/components-styles';
 
-const VoiceChat = ({ token, serverUrl }) => {
+const VoiceChat = ({ token, serverUrl, roomName }) => {
   const [isConnected, setIsConnected] = useState(false);
-  const [isChatActive, setIsChatActive] = useState(false);
 
-  // Call useVoiceAssistant unconditionally
-  const { state, audioTrack, startVoiceInteraction, stopVoiceInteraction } = useVoiceAssistant();
-
-  const handleStartChat = () => {
-    if (isConnected) {
-      startVoiceInteraction();
-      setIsChatActive(true);
-    }
-  };
-
-  const handleStopChat = () => {
-    if (isConnected) {
-      stopVoiceInteraction();
-      setIsChatActive(false);
-    }
+  const handleConnected = () => {
+    setIsConnected(true);
   };
 
   return (
@@ -33,27 +20,44 @@ const VoiceChat = ({ token, serverUrl }) => {
       token={token}
       serverUrl={serverUrl}
       connect={true}
-      onConnected={() => setIsConnected(true)}
+      audio={true}
+      video={false}
+      onConnected={handleConnected}
+      data-lk-theme="default"
     >
-      <div>
-        <h3>AI Voice Chat</h3>
-        {isConnected ? (
-          <>
-            <BarVisualizer state={state} trackRef={audioTrack} />
-            {isChatActive ? (
-              <button onClick={handleStopChat}>Stop Chat</button>
-            ) : (
-              <button onClick={handleStartChat}>Start Chat</button>
-            )}
-            <VoiceAssistantControlBar />
-            <RoomAudioRenderer />
-          </>
-        ) : (
-          <p>Connecting...</p>
-        )}
-      </div>
+      
+      {isConnected ? <VoiceAssistantUI /> : <p>Connecting to the room...</p>}
     </LiveKitRoom>
   );
 };
+
+const VoiceAssistantUI = () => {
+  const { state, audioTrack } = useVoiceAssistant();
+  const [isChatActive, setIsChatActive] = useState(false);
+
+  const handleStartChat = () => {
+    setIsChatActive(true);
+  };
+
+  const handleStopChat = () => {
+    setIsChatActive(false);
+  };
+
+  return (
+    <div>
+      <h3>AI Voice Chat</h3>
+      <BarVisualizer state={state} trackRef={audioTrack} style={{ width: '50vw', height: '10px' }} />
+      {isChatActive ? (
+          <button onClick={handleStopChat}>Stop Chat</button>
+        ) : (
+          <button onClick={handleStartChat}>Start Chat</button>
+        )
+      }
+      <VoiceAssistantControlBar />
+      <RoomAudioRenderer />
+    </div>
+  );
+};
+
 
 export default VoiceChat;

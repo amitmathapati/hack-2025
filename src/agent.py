@@ -2,42 +2,47 @@ from livekit.agents import JobContext, WorkerOptions, cli
 from livekit.plugins.openai.realtime import RealtimeModel
 from livekit.agents.multimodal import MultimodalAgent
 import logging
-
 import os
-
-# LIVEKIT_API_KEY = os.getenv('LIVEKIT_API_KEY')
-# LIVEKIT_API_SECRET = os.getenv('LIVEKIT_API_SECRET')
-# LIVEKIT_SERVER_URL = os.getenv('LIVEKIT_SERVER_URL')
-OPENAI_API_KEY=os.getenv('OPENAI_API_KEY')
-
-
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
 async def entrypoint(ctx: JobContext):
-    logger.info("Connecting to LiveKit server")
-    logger.info(f"Server URL: {LIVEKIT_SERVER_URL}")
-    # await ctx.connect()
-    await ctx.connect(
-        server_url="ws://localhost:7880",
-        api_key="devkey",
-        api_secret="secret"
-    )
-    # await ctx.connect(server_url=LIVEKIT_SERVER_URL, api_key=LIVEKIT_API_KEY, api_secret=LIVEKIT_API_SECRET)
-    agent = MultimodalAgent(
-        model=RealtimeModel(
-            instructions="You are a helpful assistant.",
-            voice="alloy",
-            temperature=0.7,
-            modalities=["text", "audio"],
-            # Replace with your OpenAI API key
-            api_key="OPENAI_API_KEY"  
+    try:
+        logger.info("Connecting to LiveKit server...")
+        await ctx.connect()
+        logger.info("Connected to LiveKit server.")
+
+        agent = MultimodalAgent(
+            model=RealtimeModel(
+                instructions="You are a helpful assistant.",
+                voice="alloy",
+                temperature=0.7,
+                modalities=["text", "audio"],
+                api_key="API_KEY"
+            )
         )
-    )
-    agent.start(ctx.room)
+        logger.info("MultimodalAgent initialized.")
+
+        agent.start(ctx.room)
+        logger.info("Agent started in the room.")
+    except Exception as e:
+        logger.error(f"Error in entrypoint: {e}")
+        return
 
 if __name__ == "__main__":
-    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint))
+    try:
+        logger.info("Starting the application...")
+        cli.run_app(
+            WorkerOptions(
+                entrypoint_fnc=entrypoint,
+                ws_url="wss://foobar-1-5i619deo.livekit.cloud",
+                api_key="API4cdcBLemXMvZ",
+                api_secret="f9ipJ7cG9xeQTRGhD4Cw2JYcfMKwzyyUlYGZmtu9QIbA"
+            )
+        )
+        # cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint))
+        logger.info("Application started.")
+    except Exception as e:
+        logger.error(f"Error in main: {e}")

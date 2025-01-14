@@ -106,15 +106,16 @@ const ThreeScene = () => {
   const [currentRows, setCurrentRows] = useState([]);
   const [livekitToken, setLivekitToken] = useState(null);
   const [roomName, setRoomName] = useState(null);
-  const livekitServerUrl = 'ws://localhost:7880';
+  const livekitServerUrl = 'wss://foobar-1-5i619deo.livekit.cloud';
 
   useEffect(() => {
     const fetchToken = async () => {
       try {
         const response = await fetch('http://localhost:3001/generate-token');
-        const data = await response.json();
-        setLivekitToken(data.token);
-        setRoomName(data.room);
+        const data = await response.text();
+        setLivekitToken(data);
+        console.log("Livekit token is: ", data);
+        // setRoomName(data.room);
       } catch (error) {
         console.error('Error fetching LiveKit token:', error);
       }
