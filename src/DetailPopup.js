@@ -1,6 +1,7 @@
 import './DetailPopup.css';
+import VoiceChat from './VoiceChat';
 
-const DetailPopup = ({ visible, onClose, text }) => {
+const DetailPopup = ({ visible, onClose, text, token, serverUrl, roomName }) => {
     if (!visible) return null;
   
     return (
@@ -12,6 +13,8 @@ const DetailPopup = ({ visible, onClose, text }) => {
         <div className="detail-popup-content"> 
           <div dangerouslySetInnerHTML={{ __html: text }} /> 
         </div>
+        {/* Embed the VoiceChat component */}
+        <VoiceChat token={token} serverUrl={serverUrl} roomName={roomName} />
         <button className="close-button" onClick={onClose}>Close</button>
       </div>
     );

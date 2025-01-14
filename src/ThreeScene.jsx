@@ -1,14 +1,15 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { PointerLockControls } from '@react-three/drei';
-import MovableAvatar from "./MovableAvatar";
+// import { PointerLockControls } from '@react-three/drei';
+// import MovableAvatar from "./MovableAvatar";
 import CameraController from "./CameraController";
-import * as THREE from "three";
-import { mx_bilerp_1 } from "three/src/nodes/materialx/lib/mx_noise.js";
+// import * as THREE from "three";
+// import { mx_bilerp_1 } from "three/src/nodes/materialx/lib/mx_noise.js";
 import Box from "./Box";
 import Popup from "./Popup";
 import DetailPopup from "./DetailPopup";
+import VoiceChat from "./VoiceChat";
 
 const Booth = ({ modelUrl, position }) => {
   const { scene } = useGLTF(modelUrl);
@@ -103,6 +104,26 @@ const ThreeScene = () => {
   const [detailPopupVisible, setDetailPopupVisible] = useState(false);
   const [detailText, setDetailText] = useState('');
   const [currentRows, setCurrentRows] = useState([]);
+  const [livekitToken, setLivekitToken] = useState(null);
+  const [roomName, setRoomName] = useState(null);
+  const livekitServerUrl = 'ws://localhost:7880';
+
+  useEffect(() => {
+    const fetchToken = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/generate-token');
+        const data = await response.json();
+        setLivekitToken(data.token);
+        setRoomName(data.room);
+      } catch (error) {
+        console.error('Error fetching LiveKit token:', error);
+      }
+    };
+
+    fetchToken();
+  }, []);
+
+
 
   const boxData = new Map([
     ['Meta', ['Privacy Engineer Implementation Review - Meta', 'Security Detection Engineer - Meta']],
@@ -170,10 +191,13 @@ const ThreeScene = () => {
           {/* <PointerLockControls /> */}
         </Canvas>
 
-      {/* Popup */}
-      <Popup visible={popupVisible} onClose={handleClosePopup} onRowClick={handleRowClick} rows={currentRows} />
-      {/* Detail Popup */}
-      <DetailPopup visible={detailPopupVisible} onClose={handleCloseDetailPopup} text={detailText} />
+        {/* Popup */}
+        <Popup visible={popupVisible} onClose={handleClosePopup} onRowClick={handleRowClick} rows={currentRows} />
+        {/* Detail Popup */}
+        <DetailPopup 
+          visible={detailPopupVisible} onClose={() => setDetailPopupVisible(false)} text={detailText} token={livekitToken}
+          serverUrl={livekitServerUrl} roomName={roomName}
+        />
       </>
     );
   };
