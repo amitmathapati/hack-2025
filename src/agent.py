@@ -124,6 +124,7 @@ async def entrypoint(ctx: JobContext):
         # agent.start(ctx.room, participant)
         agent.start(ctx.room)
         logger.info("Agent started in the room.")
+        await agent.say("Hey, welcome to our booth. How can I help you today?", allow_interruptions=True)
     except Exception as e:
         logger.error(f"Error in entrypoint: {e}")
         return
