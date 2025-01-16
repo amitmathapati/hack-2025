@@ -10,12 +10,15 @@ const createToken = async () => {
   const roomName = 'quickstart-room';
   const participantName = 'quickstart-username';
 
+  //https://docs.livekit.io/home/server/generating-tokens/ 
   const at = new AccessToken(apiKey, apiSecret, {
     identity: participantName,
     // Token to expire after 10 minutes
     ttl: '10m',
   });
-  at.addGrant({ roomJoin: true, roomCreate: true, room: roomName });
+  //More details
+  //https://github.com/livekit-examples/realtime-playground/blob/9c091a4e220c4d4410bcb62b9f9ee3fe15e7c152/web/src/app/api/token/route.ts#L66
+  at.addGrant({ roomJoin: true, roomCreate: true, room: roomName, canPublish: true, canPublishData: true });
 
   return await at.toJwt();
 };
