@@ -4,7 +4,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 // import { PointerLockControls } from '@react-three/drei';
 // import MovableAvatar from "./MovableAvatar";
 import CameraController from "./CameraController";
-// import * as THREE from "three";
+import * as THREE from "three";
 // import { mx_bilerp_1 } from "three/src/nodes/materialx/lib/mx_noise.js";
 import Box from "./Box";
 import Popup from "./Popup";
@@ -13,6 +13,15 @@ import VoiceChat from "./VoiceChat";
 
 const Booth = ({ modelUrl, position }) => {
   const { scene } = useGLTF(modelUrl);
+  // Enhance texture filtering
+  scene.traverse((child) => {
+    if (child.isMesh && child.material.map) {
+      child.material.map.anisotropy = 16; // Maximize anisotropy for sharp textures
+      child.material.map.magFilter = THREE.LinearFilter;
+      child.material.map.minFilter = THREE.LinearMipmapLinearFilter;
+    }
+  });
+
   return <primitive object={scene} position={position} scale={[0.1, 0.1, 0.1]} castShadow />;
 };
 
@@ -159,10 +168,29 @@ const ThreeScene = () => {
       <>
         <Canvas
           shadows
-          camera={{ position: [-100, 150, 650], fov: 50, near: 0.1, far: 1000 }}
+          camera={{ position: [-100, 150, 650], fov: 75, near: 0.1, far: 1000 }}
+          gl={{
+            antialias: true, // Enable antialiasing
+            precision: "highp", // Use high precision for rendering
+            logarithmicDepthBuffer: true, // Improves depth precision
+          }}
+          onCreated={({ gl }) => {
+            gl.physicallyCorrectLights = true; // More realistic lighting
+            // gl.outputEncoding = THREE.sRGBEncoding; // Better color rendering
+            gl.shadowMap.enabled = true;
+            gl.shadowMap.type = THREE.PCFSoftShadowMap; // Softer shadows
+          }}
         >
           <ambientLight intensity={0.5} />
-          <directionalLight castShadow position={[10, 10, 10]} intensity={0.8} />
+          {/* <directionalLight castShadow position={[10, 10, 10]} intensity={0.8} /> */}
+          <directionalLight
+          castShadow
+          position={[10, 10, 10]}
+          intensity={0.8}
+          shadow-mapSize-width={2048} // Increase shadow map resolution
+          shadow-mapSize-height={2048}
+          shadow-bias={-0.001} // Reduce shadow artifacts
+        />
     
           {/* Ground */}
           <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
