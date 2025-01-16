@@ -20,7 +20,7 @@ async def entrypoint(ctx: JobContext):
                 voice="alloy",
                 temperature=0.7,
                 modalities=["text", "audio"],
-                api_key="API_KEY"
+                api_key="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"
             )
         )
         logger.info("MultimodalAgent initialized.")

@@ -10,16 +10,16 @@ const CameraController = () => {
       const handleKeyDown = (event) => {
         switch (event.key) {
           case 'w':
-            setVelocity([0, 0, -4]);
+            setVelocity([0, 0, -18]);
             break;
           case 's':
-            setVelocity([0, 0, 4]);
+            setVelocity([0, 0, 18]);
             break;
           case 'a':
-            setVelocity([-4, 0, 0]);
+            setVelocity([-18, 0, 0]);
             break;
           case 'd':
-            setVelocity([4, 0, 0]);
+            setVelocity([18, 0, 0]);
             break;
           default:
             break;

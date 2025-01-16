@@ -184,6 +184,10 @@ const ThreeScene = () => {
           <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[1400, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
           {/* <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[5, 0.1, 500]} scale={[0.1, 0.1, 0.1]} rotation={[0, Math.PI, 0]} /> */}
 
+          {/* Clickable Box */}
+          <Box position={[1900, 200, -100]} onClick={() => handleBoxClick('Google')} />
+          <Booth modelUrl="/models/15ftbooth-3/scene.gltf" position={[2200, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
+
           {/* Movable Avatar */}
           {/* <MovableAvatar position={[10, 0.1, 100]} /> */}
           <CameraController />
