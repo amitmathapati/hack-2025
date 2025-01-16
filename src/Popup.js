@@ -4,10 +4,16 @@ const Popup = ({ visible, onClose, onRowClick, rows }) => {
     if (!visible) return null;
   
     return (
+      
       <div style={popupStyle}>
+        <h2> Recommended Jobs :</h2>
+        <h6 color='grey'>Click on the job below to know talk to HR representative! </h6>
         {rows.map((row, index) => (
           <div key={index} style={rowStyle} onClick={() => onRowClick(row)}>
             {row}
+            <br/> 
+            <br/> 
+            <br/> 
           </div>
         ))}
         <button onClick={onClose}>Close</button>
@@ -33,4 +39,6 @@ const Popup = ({ visible, onClose, onRowClick, rows }) => {
   const rowStyle = {
     marginBottom: '10px',
     cursor: 'pointer',
+    //Add color of the text to blue
+    color: 'blue',
   };

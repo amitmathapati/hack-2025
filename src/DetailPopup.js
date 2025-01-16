@@ -14,7 +14,7 @@ const DetailPopup = ({ visible, onClose, text, token, serverUrl, roomName }) => 
           <div dangerouslySetInnerHTML={{ __html: text }} /> 
         </div>
         {/* Embed the VoiceChat component */}
-        <VoiceChat token={token} serverUrl={serverUrl} roomName={roomName} />
+        <VoiceChat token={token} serverUrl={serverUrl} roomName={roomName} jobDescription={text} />
         <button className="close-button" onClick={onClose}>Close</button>
       </div>
     );

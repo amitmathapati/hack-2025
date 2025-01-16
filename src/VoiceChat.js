@@ -8,7 +8,7 @@ import {
 } from '@livekit/components-react';
 import '@livekit/components-styles';
 
-const VoiceChat = ({ token, serverUrl, roomName }) => {
+const VoiceChat = ({ token, serverUrl, roomName, jobDescription }) => {
   const [isConnected, setIsConnected] = useState(false);
 
   const handleConnected = () => {
