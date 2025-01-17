@@ -15,6 +15,7 @@ from livekit import rtc
 from llama_index.core.chat_engine.types import ChatMode
 import wave
 import json
+import callOpenAI
 
 import logging
 import os
@@ -83,47 +84,19 @@ async def entrypoint(ctx: JobContext):
         # Placeholder for candidate's name
         candidate_name = [None]
         
+        #https://docs.livekit.io/python/livekit/rtc/room.html#livekit.rtc.room.Room
         room = ctx.room
         
         # Function to save audio
-        # def save_audio(audio_data, filename):
-        #     with wave.open(filename, 'wb') as wf:
-        #         wf.setnchannels(1)  # Mono
-        #         wf.setsampwidth(2)  # Sample width in bytes
-        #         wf.setframerate(16000)  # Frame rate
-        #         wf.writeframes(audio_data)
-        wf = wave.open("local_audio.wav", 'wb')
-        wf.setnchannels(1)
-        wf.setsampwidth(2)
-        wf.setframerate(16000)
+        # wf = wave.open("local_audio.wav", 'wb')
+        # wf.setnchannels(1)
+        # wf.setsampwidth(2)
+        # wf.setframerate(16000)
                 
         # Function to save transcription
-        # def save_transcription(text, filename):
-        #     with open(filename, 'w') as f:
-        #         f.write(text)
-        with open("local_transcription.json", 'w') as f:
+        with open("../public/data/Security Detection Engineer - Meta/transcription.json", 'w') as f:
             json.dump([], f)
             
-        
-        
-        # Wait for the custom message with the job description
-        # job_description = [None]
-        
-        # @ctx.room.on("data_received")
-        # def on_data_received(data_packet):
-        #     job_description[0] = data_packet.payload.decode('utf-8')
-        #     logger.info(f"Received message: {job_description[0]}")
-            
-            # Process the message, e.g., send it to OpenAI
-        # async for message in ctx.room.message_events():
-        #     if "jobDescription" in message.data:
-        #         job_description = message.data["jobDescription"]
-        #         logger.info("Job Description received.", job_description)
-        #         break
-            
-        # if not job_description[0]:
-        #     logger.warning("No job description received. Using default instructions.")
-        #     job_description = "Default job description."
             
         # logger.info("Waiting for participant to join.")
         participant = await ctx.wait_for_participant()
@@ -145,6 +118,7 @@ async def entrypoint(ctx: JobContext):
         #         api_key="API_KEY"
         #     )
         # )
+        #https://docs.livekit.io/python/livekit/agents/pipeline/index.html#livekit.agents.pipeline.VoicePipelineAgent
         agent = VoicePipelineAgent(
             vad=silero.VAD.load(),
             stt=deepgram.STT(),
@@ -167,11 +141,15 @@ async def entrypoint(ctx: JobContext):
             # wf.writeframes(audio_data)
 
             # Save the transcription to the JSON file
-            with open("local_transcription.json", 'r+') as f:
+            with open("../public/data/Security Detection Engineer - Meta/transcription.json", 'r+') as f:
                 data = json.load(f)
                 data.append({"user": msg.content})
                 logger.info("#############################")
                 logger.info(f"user: {msg.content}")
+                if "name is" in msg.content:
+                    candidate_name[0] = msg.content.split("name is")[1].strip()
+                    logger.info("#############################")
+                    logger.info(f"Candidate's name: {candidate_name[0]}")
                 f.seek(0)
                 json.dump(data, f)
 
@@ -184,7 +162,7 @@ async def entrypoint(ctx: JobContext):
             # wf.writeframes(audio_data)
 
             # Save the agent's transcription to the JSON file
-            with open("local_transcription.json", 'r+') as f:
+            with open("../public/data/Security Detection Engineer - Meta/transcription.json", 'r+') as f:
                 data = json.load(f)
                 data.append({"agent": msg.content})
                 logger.info("#############################")
@@ -225,6 +203,35 @@ async def entrypoint(ctx: JobContext):
         # agent.start(ctx.room)
         logger.info("Agent started in the room.")
         await agent.say("Hey, welcome to our page. My name is Jonathan. How can I help you today?", allow_interruptions=True)
+        
+        async def my_shutdown_hook():
+            logger.info("#############################")
+            logger.info("Shutting down the agent...")
+            logger.info(f"Candidate's name: {candidate_name[0]}")
+            agent.aclose()
+            f.close()
+            #../public/data/Security Detection Engineer - Meta/
+            new_folder = f"../public/data/Security Detection Engineer - Meta/{candidate_name[0]}"
+            os.makedirs(new_folder, exist_ok=True)
+            new_file_path = os.path.join(new_folder, "transcription.json")
+            os.rename("transcription.json", new_file_path)
+            logger.info(f"File moved to {new_file_path}")
+            
+            with open("../public/data/Security Detection Engineer - Meta/applicants.json", 'r+') as fl:
+                data = json.load(fl)
+                data.append({"name": {candidate_name[0]}})
+                fl.seek(0)
+                json.dump(data, fl)
+            
+            fl.close()
+            
+            callOpenAI.getSummary(new_file_path, candidate_name[0])
+            logger.info("#############################")
+            logger.info("Agent stopped.")
+            
+            
+        ctx.add_shutdown_callback(my_shutdown_hook)
+        
     except Exception as e:
         logger.error(f"Error in entrypoint: {e}")
         return
@@ -232,6 +239,7 @@ async def entrypoint(ctx: JobContext):
 if __name__ == "__main__":
     try:
         logger.info("Starting the application...")
+        #https://docs.livekit.io/python/livekit/agents/index.html
         cli.run_app(
             WorkerOptions(
                 entrypoint_fnc=entrypoint,

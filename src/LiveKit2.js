@@ -7,6 +7,7 @@ const LiveKit2 = () => {
   const { jobTitle } = useParams();
   const [applicants, setApplicants] = useState([]);
   const [popupContent, setPopupContent] = useState(null);
+  const [chatContent, setChatContent] = useState(null);
 
   useEffect(() => {
     // Load applicants dynamically from the folder structure
@@ -34,6 +35,17 @@ const LiveKit2 = () => {
     setPopupContent(null);
   };
 
+  const openChatPopup = (filePath) => {
+    fetch(filePath)
+      .then((response) => response.text())
+      .then((data) => setChatContent(data))
+      .catch((err) => console.error('Error loading file:', err));
+  };
+
+  const closeChatPopup = () => {
+    setChatContent(null);
+  };
+
   return (
     <div className="container">
       <h1 className="header">{jobTitle} - Job Applicants</h1>
@@ -42,6 +54,7 @@ const LiveKit2 = () => {
         <thead>
           <tr>
             <th>Name</th>
+            <th>Job Description</th>
             <th>Audio Recording</th>
             <th>Transcription</th>
             <th>AI Summary of Transcription</th>
@@ -52,6 +65,14 @@ const LiveKit2 = () => {
             <tr key={index}>
               <td>{applicant.name}</td>
               <td>
+                <button
+                  className="link"
+                  onClick={() => openPopup(`/details/${jobTitle}.txt`)}
+                >
+                  View Job Description
+                </button>
+              </td>
+              <td>
                 <audio controls>
                   <source src={`/data/${jobTitle}/${applicant.name}/audio.mp3`} type="audio/mp3" />
                   Your browser does not support the audio element.
@@ -60,7 +81,7 @@ const LiveKit2 = () => {
               <td>
                 <button
                   className="link"
-                  onClick={() => openPopup(`/data/${jobTitle}/${applicant.name}/transcription.txt`)}
+                  onClick={() => openChatPopup(`/data/${jobTitle}/${applicant.name}/transcription.json`)}
                 >
                   View Transcription
                 </button>
@@ -68,7 +89,7 @@ const LiveKit2 = () => {
               <td>
                 <button
                   className="link"
-                  onClick={() => openPopup(`/data/${jobTitle}/${applicant.name}/transcription.txt`)}
+                  onClick={() => openPopup(`/data/${jobTitle}/${applicant.name}/summary.txt`)}
                 >
                   View AI Summary of Transcription
                 </button>
@@ -84,11 +105,38 @@ const LiveKit2 = () => {
             <button className="close-button" onClick={closePopup}>
               Close
             </button>
-            {/* <div className="popup-text">{popupContent}</div> */}
             <div dangerouslySetInnerHTML={{ __html: popupContent }} /> 
           </div>
         </div>
       )}
+
+      {chatContent && (
+        <div className="popup-overlay" onClick={closeChatPopup}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={closeChatPopup}>
+              Close
+            </button>
+            <div className="chat-container">
+              {JSON.parse(chatContent).map((message, index) => (
+                <div
+                  key={index}
+                  className={message.agent ? 'chat-message agent' : 'chat-message user'}
+                >
+                  <span className="chat-label">
+                    {message.agent ? 'Agent:' : 'User:'}
+                  </span>
+                  <span className="chat-text">
+                    {message.agent || message.user}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+
+
     </div>
   );
 };
