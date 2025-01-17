@@ -19,14 +19,14 @@ const VoiceChat = ({ token, serverUrl, roomName, jobDescription }) => {
 
   //does not work
   //https://docs.livekit.io/home/client/data/messages/
-  useEffect(() => {
-    if (isConnected && room) {
-      room.localParticipant.publishData(
-        new TextEncoder().encode(jobDescription),
-        { reliable: true }
-      ).catch(error => console.error('Failed to send message:', error));
-    }
-  }, [isConnected, room, jobDescription]);
+  // useEffect(() => {
+  //   if (isConnected && room) {
+  //     room.localParticipant.publishData(
+  //       new TextEncoder().encode(jobDescription),
+  //       { reliable: true }
+  //     ).catch(error => console.error('Failed to send message:', error));
+  //   }
+  // }, [isConnected, room, jobDescription]);
 
   const handleStartChat = () => {
     setIsConnected(true);

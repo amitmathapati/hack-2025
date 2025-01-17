@@ -10,6 +10,7 @@ import Box from "./Box";
 import Popup from "./Popup";
 import DetailPopup from "./DetailPopup";
 import VoiceChat from "./VoiceChat";
+import './ThreeScene.css';
 
 const Booth = ({ modelUrl, position }) => {
   const { scene } = useGLTF(modelUrl);
@@ -165,7 +166,7 @@ const ThreeScene = () => {
 
 
     return (
-      <>
+      <div className="canvas-container">
         <Canvas
           shadows
           camera={{ position: [-100, 150, 650], fov: 75, near: 0.1, far: 1000 }}
@@ -231,7 +232,7 @@ const ThreeScene = () => {
           visible={detailPopupVisible} onClose={() => setDetailPopupVisible(false)} text={detailText} token={livekitToken}
           serverUrl={livekitServerUrl} roomName={roomName}
         />
-      </>
+      </div>
     );
   };
 

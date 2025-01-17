@@ -1,4 +1,4 @@
-from livekit.agents import JobContext, WorkerOptions, cli, llm
+from livekit.agents import AutoSubscribe, JobContext, WorkerOptions, cli, llm
 from livekit.plugins.openai.realtime import RealtimeModel
 from livekit.agents.multimodal import MultimodalAgent
 from livekit.agents.pipeline import VoicePipelineAgent
@@ -12,9 +12,11 @@ from llama_index.core import (
     load_index_from_storage,
 )
 from llama_index.core.chat_engine.types import ChatMode
+import wave
 
 import logging
 import os
+from dotenv import load_dotenv
 import asyncio
 
 # Set up logging
@@ -45,10 +47,12 @@ else:
 
 
 async def entrypoint(ctx: JobContext):
+    #https://github.com/livekit/agents/blob/ab90fd242f9336c31986955ac51ca2bca8a6771d/examples/voice-pipeline-agent/llamaindex-rag/query_engine.py#L58
     initial_ctx = llm.ChatContext().append(
         role="system",
         text=(
-            "You are a HR recruiter Voice assistant at Career fair representing your company in a booth. Your interface with users will be voice. "
+            # "You are a HR recruiter Voice assistant at Career fair representing your company in a booth. Your interface with users will be voice. "
+            "You are a HR recruiter at Career fair representing your company in a booth. You will be asked details about Job description by the candidate. You have to help answer questions about the job details and then perform a screening requirement based on the job posting but be brief. Maintain the details and ask follow up questions. All of these will be transcripted and recorded and ask for permission before that. Ask for the name to save the transcript. You can search LinkedIn profile of the candidate to get more information using function context."
             # "You should use short and concise responses, and avoiding usage of unpronouncable punctuation."
         ),
     )
@@ -69,7 +73,21 @@ async def entrypoint(ctx: JobContext):
             print("Query result:", res)
             return str(res)
         
+        # Placeholder for candidate's name
+        candidate_name = [None]
         
+        # Function to save audio
+        def save_audio(audio_data, filename):
+            with wave.open(filename, 'wb') as wf:
+                wf.setnchannels(1)  # Mono
+                wf.setsampwidth(2)  # Sample width in bytes
+                wf.setframerate(16000)  # Frame rate
+                wf.writeframes(audio_data)
+                
+        # Function to save transcription
+        def save_transcription(text, filename):
+            with open(filename, 'w') as f:
+                f.write(text)
         
         # Wait for the custom message with the job description
         # job_description = [None]
@@ -120,11 +138,28 @@ async def entrypoint(ctx: JobContext):
         )
         logger.info("#############################")
         logger.info("MultimodalAgent initialized.")
+        
+        @assistant.on("transcription_received")
+        def on_transcription_received(transcription):
+            # Example: Extract candidate's name from transcription
+            if "My name is" in transcription:
+                candidate_name[0] = transcription.split("My name is")[-1].strip().split()[0]
+                print(f"Candidate's name: {candidate_name[0]}")
+
+            # Save transcription with candidate's name
+            if candidate_name[0]:
+                save_transcription(transcription, f"{candidate_name[0]}_transcription.txt")
+
+        @assistant.on("audio_received")
+        def on_audio_received(audio_data):
+            # Save audio with candidate's name
+            if candidate_name[0]:
+                save_audio(audio_data, f"{candidate_name[0]}_audio.wav")
 
         # agent.start(ctx.room, participant)
         agent.start(ctx.room)
         logger.info("Agent started in the room.")
-        await agent.say("Hey, welcome to our booth. How can I help you today?", allow_interruptions=True)
+        await agent.say("Hey, welcome to our page. My name is Jonathan. How can I help you today?", allow_interruptions=True)
     except Exception as e:
         logger.error(f"Error in entrypoint: {e}")
         return

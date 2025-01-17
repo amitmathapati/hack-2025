@@ -1,0 +1,13 @@
+.canvas-container {
+    /* background-color: #edcfe2;  */
+    /* background-color: #d6b3e4; */
+    /* background-color: #ada6ed; */
+    /* background-color: #b8dced; */
+    /* background-color: #8b79ae; */
+    background-color: #88bcd7;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
