@@ -12,6 +12,7 @@ import DetailPopup from "./DetailPopup";
 import VoiceChat from "./VoiceChat";
 import './ThreeScene.css';
 import SpeechBubble from "./SpeechBubble";
+import BigBox from "./BigBox";
 
 const Booth = ({ modelUrl, position }) => {
   const { scene } = useGLTF(modelUrl);
@@ -199,6 +200,8 @@ const ThreeScene = () => {
             <planeGeometry args={[50, 50]} />
             <meshStandardMaterial color="#808080" />
           </mesh>
+
+          <BigBox position={[-600, 150, -100]}/>
     
           {/* Booths */}
           {/* Clickable Box */}
