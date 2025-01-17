@@ -91,7 +91,7 @@ const LiveKit2 = () => {
                   className="link"
                   onClick={() => openPopup(`/data/${jobTitle}/${applicant.name}/summary.txt`)}
                 >
-                  View AI Summary of Transcription
+                  View AI Highlights of Transcription
                 </button>
               </td>
             </tr>
@@ -105,6 +105,7 @@ const LiveKit2 = () => {
             <button className="close-button" onClick={closePopup}>
               Close
             </button>
+            <br /><br /><br /><br />
             <div dangerouslySetInnerHTML={{ __html: popupContent }} /> 
           </div>
         </div>
