@@ -11,6 +11,7 @@ import Popup from "./Popup";
 import DetailPopup from "./DetailPopup";
 import VoiceChat from "./VoiceChat";
 import './ThreeScene.css';
+import SpeechBubble from "./SpeechBubble";
 
 const Booth = ({ modelUrl, position }) => {
   const { scene } = useGLTF(modelUrl);
@@ -201,15 +202,19 @@ const ThreeScene = () => {
     
           {/* Booths */}
           {/* Clickable Box */}
-          <Box position={[-250, 200, -100]} onClick={() => handleBoxClick('Meta')} />
+          {/* <Box position={[-250, 200, -100]} onClick={() => handleBoxClick('Meta')} /> */}
+          <Box position={[0, 350, -100]} onClick={() => handleBoxClick('Meta')} />
+          {/* <SpeechBubble position={[-250, 200, -100]} onClick={() => handleBoxClick('Meta')} /> */}
           <Booth modelUrl="/models/15ftbooth-3/scene.gltf" position={[5, 0.1, -5]} scale={[0.1, 0.1, 0.1]} />
 
           {/* Clickable Box */}
-          <Box position={[500, 200, -100]} onClick={() => handleBoxClick('Databricks')} />
+          {/* <Box position={[500, 200, -100]} onClick={() => handleBoxClick('Databricks')} /> */}
+          <Box position={[800, 350, -100]} onClick={() => handleBoxClick('Databricks')} />
           <Booth modelUrl="/models/15ftbooth/scene.gltf" position={[800, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
 
           {/* Clickable Box */}
-          <Box position={[1300, 200, -100]} onClick={() => handleBoxClick('Google')} />
+          {/* <Box position={[1300, 200, -100]} onClick={() => handleBoxClick('Google')} /> */}
+          <Box position={[1600, 350, -100]} onClick={() => handleBoxClick('Google')} />
           <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[1600, 0.1, 5]} scale={[0.1, 0.1, 0.1]} />
           {/* <Booth modelUrl="/models/15ftbooth-2/scene.gltf" position={[5, 0.1, 500]} scale={[0.1, 0.1, 0.1]} rotation={[0, Math.PI, 0]} /> */}
 
