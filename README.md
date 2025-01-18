@@ -4,6 +4,14 @@
 
 ![screenshot](src/screenshots/CareerVerse-1.png)
 
+![screenshot](src/screenshots/CareerVerse-2.png)
+
+![screenshot](src/screenshots/CareerVerse-3.png)
+![screenshot](src/screenshots/CareerVerse-4.png)
+![screenshot](src/screenshots/CareerVerse-5.png)
+![screenshot](src/screenshots/CareerVerse-6.png)
+![screenshot](src/screenshots/CareerVerse-7.png)
+![screenshot](src/screenshots/CareerVerse-8.png)
 # hack-2025
 Created using the following frameworks
 ### `React`
