@@ -2,6 +2,8 @@
 
 =======
 
+![screenshot](src/screenshots/CareerVerse-1.png)
+
 # hack-2025
 Created using the following frameworks
 ### `React`
@@ -14,6 +16,10 @@ Created using the following frameworks
 ### `Blender`
 ### `Free3D`
 ### `NodeJS`
+
+
+
+
 
 # Getting Started with Create React App
 
