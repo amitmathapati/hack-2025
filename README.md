@@ -1,6 +1,16 @@
-# hack-2025 Project Details
+# LinkedIn CareerVerse
 
 =======
+
+# hack-2025
+Created using the following frameworks
+### `React`
+### `Python`
+### `Three.js`
+### `LiveKit`
+### `Open-AI`
+### `LLAMA Index`
+### `Deepgram`
 
 # Getting Started with Create React App
 
