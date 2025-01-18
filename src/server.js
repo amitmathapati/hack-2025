@@ -2,10 +2,14 @@
 import express from 'express';
 import { AccessToken } from 'livekit-server-sdk';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
-const apiKey = 'API4cdcBLemXMvZ';
-const apiSecret = 'f9ipJ7cG9xeQTRGhD4Cw2JYcfMKwzyyUlYGZmtu9QIbA';
 
+dotenv.config();
+
+
+const apiKey = process.env.LIVEKIT_API_KEY;
+const apiSecret = process.env.LIVEKIT_API_SECRET;
 
 const getFormattedDateTime = () => {
   const now = new Date();

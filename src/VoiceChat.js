@@ -11,11 +11,12 @@ import '@livekit/components-styles';
 import { Chat } from "@livekit/components-react";
 
 const VoiceChat = ({ token, serverUrl, roomName, jobDescription }) => {
+  console.log(serverUrl)
   const [isConnected, setIsConnected] = useState(false);
   const [isChatActive, setIsChatActive] = useState(false);
   //Not working
   //https://docs.livekit.io/reference/components/react/hook/uselivekitroom/
-  const { room } = useLiveKitRoom();
+  // const { room } = useLiveKitRoom();
 
   //does not work
   //https://docs.livekit.io/home/client/data/messages/
@@ -62,7 +63,7 @@ const VoiceChat = ({ token, serverUrl, roomName, jobDescription }) => {
 
   const handleStopChat = () => {
     setIsChatActive(false);
-    setTimeout(() => setIsConnected(false), 500); // Disconnect after a delay to allow cleanup
+    // setTimeout(() => setIsConnected(false), 1000); // Disconnect after a delay to allow cleanup
   };
 
   // return (

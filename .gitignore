@@ -26,3 +26,5 @@ src/venv/*
 
 ImportantKeys.txt
 Working-Logs-Chat.txt
+TerminalLogs.txt
+public/data/*

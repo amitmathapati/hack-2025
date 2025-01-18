@@ -17,6 +17,14 @@ body {
     border-radius: 8px;
   }
   
+  .header-main {
+    text-align: center;
+    font-size: 40px;
+    color: #460aec;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
   .header {
     text-align: center;
     font-size: 24px;

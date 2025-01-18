@@ -57,7 +57,7 @@ const LiveKit2 = () => {
             <th>Job Description</th>
             <th>Audio Recording</th>
             <th>Transcription</th>
-            <th>AI Summary of Transcription</th>
+            <th>AI Highlights of Transcription</th>
           </tr>
         </thead>
         <tbody>
@@ -74,7 +74,8 @@ const LiveKit2 = () => {
               </td>
               <td>
                 <audio controls>
-                  <source src={`/data/${jobTitle}/${applicant.name}/audio.mp3`} type="audio/mp3" />
+                  {/* <source src={`/data/${jobTitle}/${applicant.name}/audio.m4a`} type="audio/mp3" /> */}
+                  <source src={`/data/${jobTitle}/${applicant.name}/audio.m4a`} type="audio/mp3" />
                   Your browser does not support the audio element.
                 </audio>
               </td>
@@ -118,6 +119,7 @@ const LiveKit2 = () => {
               Close
             </button>
             <div className="chat-container">
+                <h2>AI Transcription Speech to Text</h2>
               {JSON.parse(chatContent).map((message, index) => (
                 <div
                   key={index}

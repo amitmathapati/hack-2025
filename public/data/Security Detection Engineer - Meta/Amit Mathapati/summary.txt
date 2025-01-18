@@ -1,1 +1,7 @@
-Amit introduced himself and then promptly ended the conversation with the AI agent, Jonathan. There was no further inquiry or interaction from Amit's side.
+<h1><strong>Amit Mathapati - Highlights summarized by AI</strong></h1>
+<p>&nbsp;</p>
+<ul>
+<li>Amit Mathapati expressed interest in the Security Detection Engineer role at Meta, highlighting extensive experience in threat modeling, abuse detection at scale, and working with distributed systems at companies like Amazon and LinkedIn.</li>
+<li>Amit has 8 years of Python experience and 10 years of SQL expertise, making him a strong candidate for Detection &amp; Response Engineering.</li>
+<li>The AI agent acknowledged Amit&rsquo;s suitability for the role and informed him about being added to the list of eligible candidates, with further steps to be communicated via LinkedIn.</li>
+</ul>

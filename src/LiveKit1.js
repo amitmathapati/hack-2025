@@ -17,7 +17,9 @@ const jobs = [
 const LiveKit1 = () => {
   return (
     <div className="container">
-      <h1 className="header">Meta Recruiter Dashboard</h1>
+      <h1 className="header-main">LinkedIn CareerVerse</h1>
+      <br/><br/>
+      <h2 className="header">Meta Recruiter Dashboard</h2>
       <table className="styled-table">
         <thead>
           <tr>

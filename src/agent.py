@@ -1,5 +1,5 @@
-from livekit.agents import AutoSubscribe, JobContext, WorkerOptions, cli, llm
-from livekit.plugins.openai.realtime import RealtimeModel
+from livekit.agents import JobContext, WorkerOptions, cli, llm
+# from livekit.plugins.openai.realtime import RealtimeModel
 from livekit.agents.multimodal import MultimodalAgent
 from livekit.agents.pipeline import VoicePipelineAgent, AgentTranscriptionOptions
 from livekit.plugins import deepgram
@@ -13,9 +13,9 @@ from llama_index.core import (
 )
 from livekit import rtc
 from llama_index.core.chat_engine.types import ChatMode
-import wave
+# import wave
 import json
-import callOpenAI
+# import callOpenAI
 
 import logging
 import os
@@ -26,13 +26,16 @@ import asyncio
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY")
+# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY")
+LIVEKIT_API_KEY = os.getenv("LIVEKIT_API_KEY")
+LIVEKIT_API_SECRET = os.getenv("LIVEKIT_API_SECRET")
+LIVEKIT_SERVER_URL = os.getenv("LIVEKIT_SERVER_URL")
 
-logger.info("#############################")
-logger.info(f"OPENAI_API_KEY {OPENAI_API_KEY}")
-logger.info("#############################")
-logger.info(f"DEEPGRAM_API_KEY {DEEPGRAM_API_KEY}")
+logger.info("############################# START")
+# logger.info(f"OPENAI_API_KEY {OPENAI_API_KEY}")
+# logger.info("#############################")
+# logger.info(f"DEEPGRAM_API_KEY {DEEPGRAM_API_KEY}")
 
 # logger.info(f"Received message: {job_description[0]}")
 # check if storage already exists
@@ -54,12 +57,12 @@ async def entrypoint(ctx: JobContext):
     initial_ctx = llm.ChatContext().append(
         role="system",
         text=(
-            "Just ask two questions: What is the name and where are you from? And end the conversation."
+            # "Just ask two questions: What is the name and where are you from? And end the conversation."
             # "You are a HR recruiter Voice assistant at Career fair representing your company in a booth. Your interface with users will be voice. "
-            # "You are a HR recruiter at Career fair representing your company in a booth. You will be asked details about Job description by the candidate but be brief. "
-            # "You have to help answer questions about the job details and then perform a screening requirement based on the job posting but be brief. "
-            # "Maintain the details and ask follow up questions. All of these will be transcripted and recorded and ask for permission before that."
-            # "Ask for the name to save the transcript."
+            "You are a HR recruiter at Career fair. You will be asked details about Job description by the candidate but be brief. "
+            "Perform a initial screening requirement based on the job posting but be brief. "
+            "All of these will be transcripted and recorded and ask for permission before that."
+            "Ask for the name to save the transcript."
             # "You can search LinkedIn profile of the candidate to get more information using function context."
             # "You should use short and concise responses, and avoiding usage of unpronouncable punctuation."
         ),
@@ -85,7 +88,7 @@ async def entrypoint(ctx: JobContext):
         candidate_name = [None]
         
         #https://docs.livekit.io/python/livekit/rtc/room.html#livekit.rtc.room.Room
-        room = ctx.room
+        # room = ctx.room
         
         # Function to save audio
         # wf = wave.open("local_audio.wav", 'wb')
@@ -129,7 +132,7 @@ async def entrypoint(ctx: JobContext):
             transcription=AgentTranscriptionOptions(user_transcription=True, agent_transcription=True)
         )
         logger.info("#############################")
-        logger.info("MultimodalAgent initialized.")
+        logger.info("VoicePipelineAgent initialized.")
         
         @agent.on("user_speech_committed")
         def on_user_speech_committed(msg: llm.ChatMessage):
@@ -146,10 +149,10 @@ async def entrypoint(ctx: JobContext):
                 data.append({"user": msg.content})
                 logger.info("#############################")
                 logger.info(f"user: {msg.content}")
-                if "name is" in msg.content:
-                    candidate_name[0] = msg.content.split("name is")[1].strip()
-                    logger.info("#############################")
-                    logger.info(f"Candidate's name: {candidate_name[0]}")
+                # if "name is" in msg.content:
+                #     candidate_name[0] = msg.content.split("name is")[1].strip()
+                #     logger.info("#############################")
+                #     logger.info(f"Candidate's name: {candidate_name[0]}")
                 f.seek(0)
                 json.dump(data, f)
 
@@ -198,39 +201,42 @@ async def entrypoint(ctx: JobContext):
         
         
 
-        # agent.start(ctx.room, participant)
-        agent.start(room, participant)
+        agent.start(ctx.room, participant)
+        # agent.start(room, participant)
         # agent.start(ctx.room)
         logger.info("Agent started in the room.")
         await agent.say("Hey, welcome to our page. My name is Jonathan. How can I help you today?", allow_interruptions=True)
         
-        async def my_shutdown_hook():
-            logger.info("#############################")
-            logger.info("Shutting down the agent...")
-            logger.info(f"Candidate's name: {candidate_name[0]}")
-            agent.aclose()
-            f.close()
-            #../public/data/Security Detection Engineer - Meta/
-            new_folder = f"../public/data/Security Detection Engineer - Meta/{candidate_name[0]}"
-            os.makedirs(new_folder, exist_ok=True)
-            new_file_path = os.path.join(new_folder, "transcription.json")
-            os.rename("transcription.json", new_file_path)
-            logger.info(f"File moved to {new_file_path}")
+        ctx.room.on('disconnected', lambda reason: logger.info(f"############### Disconnected: {reason}"))
+        ctx.room.on('error', lambda error: logger.error(f"############### Room error: {error}"))
+
+        # async def my_shutdown_hook():
+        #     logger.info("#############################")
+        #     logger.info("Shutting down the agent...")
+        #     logger.info(f"Candidate's name: {candidate_name[0]}")
+        #     agent.aclose()
+        #     f.close()
+        #     #../public/data/Security Detection Engineer - Meta/
+        #     new_folder = f"../public/data/Security Detection Engineer - Meta/{candidate_name[0]}"
+        #     os.makedirs(new_folder, exist_ok=True)
+        #     new_file_path = os.path.join(new_folder, "transcription.json")
+        #     os.rename("transcription.json", new_file_path)
+        #     logger.info(f"File moved to {new_file_path}")
             
-            with open("../public/data/Security Detection Engineer - Meta/applicants.json", 'r+') as fl:
-                data = json.load(fl)
-                data.append({"name": {candidate_name[0]}})
-                fl.seek(0)
-                json.dump(data, fl)
+        #     with open("../public/data/Security Detection Engineer - Meta/applicants.json", 'r+') as fl:
+        #         data = json.load(fl)
+        #         data.append({"name": {candidate_name[0]}})
+        #         fl.seek(0)
+        #         json.dump(data, fl)
             
-            fl.close()
+        #     fl.close()
             
-            callOpenAI.getSummary(new_file_path, candidate_name[0])
-            logger.info("#############################")
-            logger.info("Agent stopped.")
+        #     callOpenAI.getSummary(new_file_path, candidate_name[0])
+        #     logger.info("#############################")
+        #     logger.info("Agent stopped.")
             
             
-        ctx.add_shutdown_callback(my_shutdown_hook)
+        # ctx.add_shutdown_callback(my_shutdown_hook)
         
     except Exception as e:
         logger.error(f"Error in entrypoint: {e}")
@@ -240,12 +246,13 @@ if __name__ == "__main__":
     try:
         logger.info("Starting the application...")
         #https://docs.livekit.io/python/livekit/agents/index.html
+        #amitmathapati
         cli.run_app(
             WorkerOptions(
                 entrypoint_fnc=entrypoint,
-                ws_url="wss://foobar-1-5i619deo.livekit.cloud",
-                api_key="API4cdcBLemXMvZ",
-                api_secret="f9ipJ7cG9xeQTRGhD4Cw2JYcfMKwzyyUlYGZmtu9QIbA"
+                ws_url="f{LIVEKIT_SERVER_URL}",
+                api_key="f{LIVEKIT_API_KEY}",
+                api_secret="f{LIVEKIT_API_SECRET} "
             )
         )
         # cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint))

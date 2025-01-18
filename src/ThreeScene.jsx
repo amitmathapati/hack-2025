@@ -118,7 +118,9 @@ const ThreeScene = () => {
   const [currentRows, setCurrentRows] = useState([]);
   const [livekitToken, setLivekitToken] = useState(null);
   const [roomName, setRoomName] = useState(null);
-  const livekitServerUrl = 'wss://foobar-1-5i619deo.livekit.cloud';
+  // // const livekitServerUrl = 'wss://foobar-1-5i619deo.livekit.cloud';
+  // const livekitServerUrl = 'wss://amitmathapati-1-pqsyvz6m.livekit.cloud';
+  const livekitServerUrl =  process.env.LIVEKIT_SERVER_URL
 
   useEffect(() => {
     const fetchToken = async () => {

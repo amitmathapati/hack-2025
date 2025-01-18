@@ -1,1 +1,19 @@
-[{"agent": " Hey, welcome to our page. My name is Jonathan. How can I help you today?"}, {"user": "My name is Amit. Goodbye."}, {"agent": " Thank you, Amit. Goodbye!"}]
+[
+    {"agent": "Hey, welcome to our page. My name is Jonathan. How can I help you today?"}, 
+    {"user": "Hi. My name is Amit Mathapati. I would like to know more about security detection engineer at Meta."}, 
+    {"agent": "Hello Amit! Before we proceed, do I have your permission to transcribe and record our conversation for future reference?"},
+    {"user": "Yes"}, 
+    {"agent": "Thank you, Ahmed. The Security Detection Engineer role at Meta involves enhancing GenAI capabilities for detecting and responding to internal threats. Key responsibilities include threat modeling, analyzing logs, and developing workflows to resolve false positives. We require a Bachelor's in Computer Science and 5+ years of experience in Detection & Response Engineering, with skills in Python and SQL. Do you have experience in these areas?"}, 
+    {"user": "Yes. I do have."},
+    {"agent": "Great! Could you tell me more about your experience with Threat modelling and Security?"},
+    {"user": "I have been part of Trust engineering detecting Abuse at scale across all abuse vectors and worked on Traffic layer, Fake Accounts, Scraping, etc.]"},
+    {"agent": "Great! Could you tell me more about your experience with Distributed systems?"},
+    {"user": "I have been working on distributed systems at Scale previously at Amazon and LinkedIn wherein we had to deal with scale of multi-million QPS with ultra low latency. At LinkedIn, I had to use in-house infrastrcuture as comapred to Amazin wherei it was Cloud technologies."},
+    {"agent": "Great! Could you tell me more about your experience with Python and SQL?"},
+    {"user": "I have been working with Python for 8 years and SQL for 10 years."},
+    {"agent": "That's impressive! Great! Your experience with Detection & Response Engineering and skills in Python and SQL make you a suitable candidate. If you're interested in applying, feel free to share your resume or any questions you might have about the role. Do you have any other questions?"}, 
+    {"user": "No, I think I understand everything. Thank you for your help."}, 
+    {"agent": "I will add your name to our list of eligible candidates and will reach out on LinkedIn for next steps."}
+    {"user": "Thank you for performing the initial Screening."}, 
+    {"agent": "You're welcome, Amit! If you have any more questions in the future, feel free to reach out. Good luck with your application!"}
+]
