@@ -11,10 +11,14 @@ Created using the following frameworks
 ### `Open-AI`
 ### `LLAMA Index`
 ### `Deepgram`
+### `Blender`
+### `Free3D`
+### `NodeJS`
 
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Reach out to me for more Instructions at amitmathapati@linkedin.com
+
 
 ## Available Scripts
 
